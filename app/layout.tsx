@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -9,7 +11,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "MathBridge - Accessible & Personalized Learning",
-  description: "An education and EdTech platform focused on making math learning more accessible, engaging, and personalized.",
+  description:
+    "An education and EdTech platform focused on making math learning more accessible, engaging, and personalized.",
 };
 
 export default function RootLayout({
@@ -19,8 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <Navbar />
+        <main className="flex-1 pt-[72px]">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
-

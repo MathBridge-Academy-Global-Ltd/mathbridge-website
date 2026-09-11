@@ -14,14 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -41,34 +34,30 @@ export default function Navbar() {
       {/* ── Header ── */}
       <header
         role="banner"
-        className={[
-          "fixed top-0 left-0 right-0 z-[1000] h-[72px] border-b",
-          "transition-all duration-[220ms] ease-in-out",
-          isScrolled
-            ? "bg-white/85 backdrop-blur-md border-primaryBlue/10 shadow-[0_2px_24px_rgba(0,9,175,0.08)]"
-            : "bg-white border-transparent",
-        ].join(" ")}
+        className="fixed top-0 left-0 right-0 z-[1000] h-[72px] border-b bg-white/75 backdrop-blur-xl backdrop-saturate-[180%] border-primaryBlue/10 shadow-[0_2px_24px_rgba(0,9,175,0.07)] transition-shadow duration-300"
       >
-        <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between gap-8">
+        <div className="max-w-[1280px] mx-auto px-6 h-full grid grid-cols-3 items-center">
           {/* Logo */}
+          {/* col-1: Logo (left-aligned) */}
           <Link
             href="/"
             aria-label="MathBridge Home"
-            className="flex items-center shrink-0 transition-opacity duration-200 hover:opacity-80"
+            className="flex items-center justify-start transition-opacity duration-200 hover:opacity-80"
           >
             <Image
               src="/mathbridge-logo.png"
               alt="MathBridge Logo"
-              width={120}
-              height={36}
+              width={160}
+              height={68}
               priority
-              className="h-9 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop nav */}
+          {/* col-2: Nav links (centred) */}
           <nav
-            className="hidden md:flex items-center gap-1 mx-auto"
+            className="hidden md:flex items-center justify-center gap-1"
             aria-label="Main navigation"
           >
             {navLinks.map((link) => {
@@ -101,8 +90,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block shrink-0 ml-auto">
+          {/* col-3: CTA (right-aligned) */}
+          <div className="hidden md:flex items-center justify-end">
             <Link
               href="/contact"
               id="navbar-cta-btn"
@@ -119,14 +108,14 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Hamburger */}
+          {/* Hamburger — col-3, pinned right */}
           <button
             id="navbar-hamburger"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="md:hidden ml-auto flex items-center justify-center w-11 h-11 rounded-[10px] bg-transparent border-none cursor-pointer text-gray transition-all duration-200 hover:bg-primaryBlue/[0.06] hover:text-primaryBlue"
+            className="md:hidden col-start-3 justify-self-end flex items-center justify-center w-12 h-12 rounded-xl bg-transparent border-none cursor-pointer text-gray transition-all duration-200 hover:bg-primaryBlue/[0.06] hover:text-primaryBlue"
           >
             <span
               className={[
@@ -134,7 +123,7 @@ export default function Navbar() {
                 menuOpen ? "rotate-90 scale-110" : "rotate-0 scale-100",
               ].join(" ")}
             >
-              {menuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2} />}
+              {menuOpen ? <X size={26} strokeWidth={2.5} /> : <Menu size={26} strokeWidth={2} />}
             </span>
           </button>
         </div>
@@ -170,7 +159,7 @@ export default function Navbar() {
           ].join(" ")}
         >
           {/* Drawer header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-primaryBlue/[0.08]">
+          <div className="flex items-center justify-between px-6 py-3">
             <Image
               src="/mathbridge-logo.png"
               alt="MathBridge"

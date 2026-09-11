@@ -116,11 +116,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-1.5 text-white/70 text-[0.9375rem] no-underline transition-all duration-200 hover:text-white hover:translate-x-1"
+                    className="group flex items-center gap-1.5 text-white/70 text-[0.9375rem] no-underline transition-all duration-400 hover:text-white hover:translate-x-1"
                   >
                     <ChevronRight
                       size={14}
-                      className="opacity-0 -translate-x-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 shrink-0"
+                      className="w-0 overflow-hidden opacity-0 group-hover:w-3.5 group-hover:opacity-100 transition-all duration-400 shrink-0"
                     />
                     {link.label}
                   </Link>
@@ -141,11 +141,11 @@ export default function Footer() {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-center gap-2 text-white/70 text-[0.9375rem] no-underline transition-all duration-200 hover:text-white hover:translate-x-1"
+                    className="group flex items-center gap-2 text-white/70 text-[0.9375rem] no-underline transition-all duration-400 hover:text-white hover:translate-x-1"
                   >
                     <Icon
                       size={15}
-                      className="shrink-0 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                      className="shrink-0 opacity-60 group-hover:opacity-100 transition-opacity duration-400"
                     />
                     {label}
                   </a>

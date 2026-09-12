@@ -15,6 +15,7 @@
   --color-background: #ffffff;
   --color-foreground: #101928;
   --font-sans: var(--font-teachers), system-ui, sans-serif;
+  --font-kavoon: var(--font-kavoon), cursive;
 }
 
 html {

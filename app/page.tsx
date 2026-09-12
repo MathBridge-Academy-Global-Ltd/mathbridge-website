@@ -1,10 +1,12 @@
-import Hero from "@/components/Hero";
-import Subjects from "@/components/Subjects";
+import Hero from "@/components/home/Hero";
+import ExamMarquee from "@/components/home/ExamMarquee";
+import Subjects from "@/components/home/Subjects";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <ExamMarquee />
       <Subjects />
     </>
   );

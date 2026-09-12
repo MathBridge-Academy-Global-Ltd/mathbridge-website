@@ -78,7 +78,7 @@ export default function Footer() {
       {/* Dark navy gradient from ~40% down so bottom bar is deep blue */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primaryBlue/75 via-primaryBlue/80 to-[#00035e]/98"
+        className="absolute inset-0 bg-gradient-to-b from-primaryBlue/80 via-primaryBlue/90 to-primaryBlue/98"
       />
 
       {/* ── Main content ── */}

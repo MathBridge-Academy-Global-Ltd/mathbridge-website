@@ -161,7 +161,7 @@ export default function Navbar() {
           {/* Drawer header */}
           <div className="flex items-center justify-between px-6 py-3">
             <Image
-              src="/mathbridge-logo.png"
+              src="/app-logo.svg"
               alt="MathBridge"
               width={110}
               height={32}

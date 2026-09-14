@@ -128,7 +128,7 @@ function AnimatedLine({
 
 // Node layout constants (px, relative to the container)
 const NODES = {
-  n1: { leftPct: "50%", top: 20  },
+  n1: { leftPct: "50%", top: 20 },
   n2: { leftPct: "18%", top: 250 },
   n3: { leftPct: "82%", top: 250 },
   n4: { leftPct: "82%", top: 530 }, // pushed down to clear N3's card

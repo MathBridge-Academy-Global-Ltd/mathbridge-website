@@ -185,7 +185,7 @@ export default function Subjects() {
             style={{
               borderRadius: "20px",
               padding: "28px",
-              background: "linear-gradient(135deg, #0009af 0%, #0014e0 100%)",
+              background: "linear-gradient(135deg, rgba(0,9,175,0.75) 0%, rgba(0,20,224,0.75) 100%), url('/background.png') center/cover no-repeat",
               boxShadow: "0 8px 32px rgba(0,9,175,0.22)",
               display: "flex",
               flexDirection: "column",

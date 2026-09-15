@@ -3,6 +3,7 @@ import ExamMarquee from "@/components/home/ExamMarquee";
 import AboutRecords from "@/components/about/AboutRecords";
 import AboutServices from "@/components/about/AboutServices";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
+import AboutBridges from "@/components/about/AboutBridges";
 
 export default function AboutPage() {
   return (
@@ -56,6 +57,7 @@ export default function AboutPage() {
       <AboutVisionMission />
       <AboutRecords />
       <AboutServices />
+      <AboutBridges />
     </>
   );
 }

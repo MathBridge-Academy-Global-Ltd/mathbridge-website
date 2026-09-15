@@ -31,6 +31,12 @@ const tabs: Tab[] = [
 ];
 
 const allStaff: StaffMember[] = [
+    {
+    name: "Gboyega Afolalu", role: "CEO/FOUNDER",
+    bio: "Driven by a passion for education and a commitment to excellence, he has built MathBridge into a trusted platform that helps students excel in their academic pursuits. ",
+    image: "/images/about/staffs/others/gboyega-others.jpg",
+    deptId: "others", deptColor: "#374151",
+  },
   {
     name: "Nelson", role: "Director",
     bio: "Drives the strategic direction of MathBridge, ensuring the company stays true to its mission.",

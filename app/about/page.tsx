@@ -4,6 +4,7 @@ import AboutRecords from "@/components/about/AboutRecords";
 import AboutServices from "@/components/about/AboutServices";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutBridges from "@/components/about/AboutBridges";
+import AboutFAQ from "@/components/about/AboutFAQ"
 
 export default function AboutPage() {
   return (
@@ -58,6 +59,7 @@ export default function AboutPage() {
       <AboutRecords />
       <AboutServices />
       <AboutBridges />
+      <AboutFAQ />
     </>
   );
 }

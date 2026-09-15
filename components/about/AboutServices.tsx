@@ -57,7 +57,19 @@ const services = [
 
 export default function AboutServices() {
   return (
-    <section className="relative overflow-hidden py-20" style={{ backgroundColor: "#F5F7FE" }}>
+    <section className="relative overflow-hidden py-20 bg-[#FAFBFF]">
+      {/* Net grid background pattern */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-45"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0, 9, 175, 0.07) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 9, 175, 0.07) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
 
       {/* Background texture */}
       <div

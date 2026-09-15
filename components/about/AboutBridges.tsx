@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Crown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /* ─────────────────── Data ─────────────────── */
 type StaffMember = {
@@ -153,8 +153,7 @@ export default function AboutBridges() {
   };
 
   return (
-    <section className="relative overflow-hidden py-24 bg-[#FAFBFF]">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none opacity-30" style={{ backgroundImage: `radial-gradient(#0009af12 1px, transparent 1px)`, backgroundSize: "28px 28px" }} />
+    <section className="relative overflow-hidden py-24 bg-white">
       <div aria-hidden="true" className="absolute -top-32 right-0 w-[500px] h-[400px] bg-gradient-to-bl from-[#f1aa00]/8 to-transparent blur-3xl pointer-events-none" />
       <div aria-hidden="true" className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#0009af]/6 to-transparent blur-3xl pointer-events-none" />
 

@@ -67,15 +67,13 @@ const cardVariants = {
 
 export default function Subjects() {
   return (
-    <section className="relative overflow-hidden py-20" style={{ backgroundColor: "#F5F7FE" }}>
+    <section className="relative overflow-hidden py-20" style={{ backgroundColor: "#FAFBFF" }}>
 
       {/* ── Subtle background texture ── */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {/* Soft glow blobs */}
         <div style={{ position:"absolute", top:"-80px", right:"-80px", width:"400px", height:"400px", borderRadius:"50%", background:"radial-gradient(circle, rgba(0,9,175,0.07) 0%, transparent 70%)", filter:"blur(20px)" }} />
         <div style={{ position:"absolute", bottom:"-60px", left:"-60px", width:"360px", height:"360px", borderRadius:"50%", background:"radial-gradient(circle, rgba(241,170,0,0.08) 0%, transparent 70%)", filter:"blur(20px)" }} />
-        {/* Math doodle background */}
-        <div style={{ position:"absolute", inset:0, backgroundImage:"url('/background.png')", backgroundSize:"cover", backgroundPosition:"center", opacity:0.1 }} />
       </div>
 
       <div className="relative max-w-[1120px] mx-auto px-6">

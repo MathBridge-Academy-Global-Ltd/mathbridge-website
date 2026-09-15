@@ -198,8 +198,21 @@ export default function WhyMathBridge() {
   const inView = useInView(sectionRef as RefObject<Element>, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-white py-20" ref={sectionRef}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="relative overflow-hidden bg-[#FAFBFF] py-20" ref={sectionRef}>
+      {/* Net grid background pattern */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-45"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0, 9, 175, 0.07) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 9, 175, 0.07) 1px, transparent 1px)
+          `,
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* Heading */}
         <motion.div
           className="text-center max-w-xl mx-auto mb-14"

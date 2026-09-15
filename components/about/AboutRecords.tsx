@@ -44,16 +44,8 @@ export default function AboutRecords() {
   const examSuccessCount = useCountUp(95, 1600, inView);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden py-24 bg-[#FAFBFF]">
-      {/* Background grid texture & decorative glows */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          backgroundImage: `radial-gradient(#0009af15 1px, transparent 1px)`,
-          backgroundSize: "28px 28px",
-        }}
-      />
+    <section ref={sectionRef} className="relative overflow-hidden py-24 bg-white">
+      {/* Background decorative glows */}
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#0009af]/10 via-[#0009af]/0 to-transparent blur-3xl pointer-events-none"

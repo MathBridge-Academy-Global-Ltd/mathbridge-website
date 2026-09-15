@@ -273,8 +273,14 @@ export default function FourSteps() {
   const headingInView = useInView(headingRef as RefObject<Element>, { once: true, margin: "-80px" });
 
   return (
-    <section className="bg-[#F5F7FE] py-20 overflow-hidden">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section className="relative bg-[#FAFBFF] py-20 overflow-hidden">
+      {/* Background image texture */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-10 bg-cover bg-center"
+        style={{ backgroundImage: "url('/background.png')" }}
+      />
+      <div className="relative z-10 max-w-[1120px] mx-auto px-6">
         {/* Heading */}
         <motion.div
           ref={headingRef}

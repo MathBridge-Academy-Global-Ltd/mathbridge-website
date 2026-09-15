@@ -95,7 +95,7 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-3 mb-2 text-[1.5rem] font-extrabold tracking-tight text-white">
-            MATHBridge
+            MATH<span className="text-primaryGold">Bridge</span>
           </p>
           <p className="text-[0.9rem] leading-[1.75] text-white/70 m-0">
             Personalized online tutoring that builds confidence

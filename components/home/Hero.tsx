@@ -14,7 +14,7 @@ const fadeUp = (delay = 0) => ({
 
 /* ────────────────────────────── stats data ─────────────────────────────── */
 const stats = [
-  { value: "120+", label: "Hours Taught" },
+  { value: "650+", label: "Hours Taught" },
   { value: "1:1",  label: "Personalised Learning" },
   { value: "5",    label: "Parent Satisfaction", star: true },
   { value: "100%", label: "Progress Report" },

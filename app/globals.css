@@ -14,7 +14,7 @@
   --color-gray: #101928;
   --color-background: #ffffff;
   --color-foreground: #101928;
-  --font-sans: var(--font-teachers), system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --font-kavoon: var(--font-kavoon), cursive;
 }
 
@@ -25,7 +25,7 @@ html {
 body {
   background-color: #ffffff;
   color: #101928;
-  font-family: var(--font-teachers), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   margin: 0;
 }
 

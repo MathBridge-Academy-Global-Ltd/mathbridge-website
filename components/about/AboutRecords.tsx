@@ -36,8 +36,8 @@ export default function AboutRecords() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-60px" });
 
-  const hoursCount = useCountUp(650, 1800, inView);
-  const staffCount = useCountUp(10, 1400, inView);
+  const hoursCount = useCountUp(1000, 1800, inView);
+  const staffCount = useCountUp(20, 1400, inView);
   const continentsCount = useCountUp(3, 1200, inView);
   const subjectsCount = useCountUp(5, 1200, inView);
   const satisfactionCount = useCountUp(98, 1600, inView);
@@ -206,9 +206,9 @@ export default function AboutRecords() {
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             className="w-[88vw] max-w-[360px] shrink-0 snap-center md:col-span-12 lg:col-span-5 md:w-auto md:max-w-none md:shrink relative overflow-hidden rounded-3xl p-7 sm:p-10 flex flex-col justify-between shadow-xl"
             style={{
-              backgroundColor: "#f1aa00",
-              backgroundImage: "linear-gradient(135deg, #f1aa00 0%, #e09b00 100%)",
-              boxShadow: "0 20px 40px -15px rgba(241, 170, 0, 0.35)",
+              backgroundColor: "#101928",
+              backgroundImage: "linear-gradient(135deg, #101928 0%, #000000 100%)",
+              boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.5)",
             }}
           >
             {/* /background.png texture overlay */}
@@ -225,20 +225,20 @@ export default function AboutRecords() {
             {/* Ambient light glow */}
             <div
               aria-hidden="true"
-              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/20 blur-2xl pointer-events-none"
+              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-2xl pointer-events-none"
             />
 
             {/* Top row */}
             <div className="relative z-10 flex items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[#0009af] flex items-center justify-center shadow-md">
+                <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center shadow-md">
                   <Globe2 className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[#101928]">
+                <span className="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-gray-200">
                   Global Reach
                 </span>
               </div>
-              <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#0009af] text-white shadow-sm">
+              <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white shadow-sm backdrop-blur-sm">
                 Worldwide
               </span>
             </div>
@@ -246,28 +246,28 @@ export default function AboutRecords() {
             {/* Stat & Description */}
             <div className="relative z-10 my-auto py-2">
               <div className="flex items-baseline gap-3 mb-3">
-                <span className="text-6xl sm:text-7xl font-black text-[#101928] tabular-nums tracking-tight">
+                <span className="text-6xl sm:text-7xl font-black text-white tabular-nums tracking-tight">
                   {continentsCount}+
                 </span>
-                <span className="text-xl sm:text-2xl font-black text-[#101928] leading-tight">
+                <span className="text-xl sm:text-2xl font-black text-white leading-tight">
                   Continents <br />
-                  <span className="text-[#0009af] text-lg font-bold">Reached</span>
+                  <span className="text-[#f1aa00] text-lg font-bold">Reached</span>
                 </span>
               </div>
-              <p className="text-sm sm:text-base text-[#101928]/90 leading-relaxed mt-3 font-medium">
-                Families across <strong className="text-[#101928] font-black">Africa, Europe & North America</strong> trust MathBridge weekly for curriculum-aligned excellence.
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-3 font-medium">
+                Families across <strong className="text-white font-black">Africa, Europe & North America</strong> trust MathBridge weekly for curriculum-aligned excellence.
               </p>
             </div>
 
             {/* Tag pills */}
-            <div className="relative z-10 pt-6 mt-6 border-t border-black/10 flex flex-wrap gap-2">
-              <span className="px-3 py-1 rounded-lg bg-white text-[#101928] text-xs font-bold shadow-sm">
+            <div className="relative z-10 pt-6 mt-6 border-t border-white/10 flex flex-wrap gap-2">
+              <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-bold shadow-sm">
                 UK / British (GCSE/A-Level)
               </span>
-              <span className="px-3 py-1 rounded-lg bg-white text-[#101928] text-xs font-bold shadow-sm">
+              <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-bold shadow-sm">
                 West Africa (WAEC/JAMB)
               </span>
-              <span className="px-3 py-1 rounded-lg bg-white text-[#101928] text-xs font-bold shadow-sm">
+              <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-bold shadow-sm">
                 US / International (SAT)
               </span>
             </div>

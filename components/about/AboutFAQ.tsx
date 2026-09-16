@@ -99,12 +99,12 @@ export default function AboutFAQ({ showNetGrid = true }: { showNetGrid?: boolean
             </p>
 
             {/* Info badge */}
-            <div className="flex items-center gap-3.5 bg-primaryGold border border-gray-150 rounded-2xl p-4 shadow-sm max-w-sm">
+            <div className="flex items-center gap-3.5 bg-black border border-gray-150 rounded-2xl p-4 shadow-sm max-w-sm">
               <div className="w-10 h-10 rounded-xl bg-[#0009af] flex items-center justify-center text-white shrink-0 shadow-sm">
                 <span className="text-sm font-black">5+</span>
               </div>
               <div>
-                <p className="text-xs font-extrabold text-[#101928]">Core & Custom Subjects</p>
+                <p className="text-xs font-extrabold text-white">Core & Custom Subjects</p>
                 <p className="text-[11px] text-white font-medium">Personalized 1-on-1 programs</p>
               </div>
             </div>

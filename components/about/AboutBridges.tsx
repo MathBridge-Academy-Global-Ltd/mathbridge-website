@@ -21,20 +21,80 @@ type Tab = { id: string; label: string; color: string };
 /* Tabs: All → Support Team → HODs → Subjects */
 const tabs: Tab[] = [
   { id: "all", label: "All", color: "#0009af" },
-  { id: "others", label: "Support Team", color: "#374151" },
   { id: "hods", label: "HODs", color: "#c27c00" },
   { id: "maths", label: "Mathematics", color: "#0009af" },
   { id: "english", label: "English", color: "#6D28D9" },
   { id: "physics", label: "Physics", color: "#0e7490" },
   { id: "biology", label: "Biology", color: "#166534" },
   { id: "chemistry", label: "Chemistry", color: "#9a3412" },
+  { id: "others", label: "Support Team", color: "#374151" },
 ];
 
 const allStaff: StaffMember[] = [
-    {
+  {
+    name: "Bolaji", role: "Head of Mathematics",
+    bio: "Expert in GCSE, WAEC Maths with a talent for breaking down complex problems into simple, logical steps.",
+    image: "/images/about/staffs/maths/bolaji-maths.jpg",
+    deptId: "maths", deptColor: "#0009af", isHOD: true,
+  },
+  {
+    name: "Praise", role: "Head of English",
+    bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
+    image: "/images/about/staffs/english/Praise.jpg",
+    deptId: "english", deptColor: "#6D28D9", isHOD: true,
+  },
+  {
+    name: "Joshua", role: "Head of Physics",
+    bio: "Makes abstract Physics concepts tangible through vivid diagrams, worked derivations.",
+    image: "/images/about/staffs/physics/joshua-physics.jpg",
+    deptId: "physics", deptColor: "#0e7490", isHOD: true,
+  },
+  {
+    name: "Joy", role: "Head of Biology",
+    bio: "Inspires genuine curiosity about living systems and prepares students for top results in WAEC and GCSE Biology.",
+    image: "/images/about/staffs/biology/joy-biology.jpg",
+    deptId: "biology", deptColor: "#166534", isHOD: true,
+  },
+  {
+    name: "Titilope", role: "Head of Chemistry",
+    bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
+    image: "/images/about/staffs/chemistry/Titilope.jpg",
+    deptId: "chemistry", deptColor: "#9a3412", isHOD: true,
+  },
+  {
+    name: "Grace", role: "Mathematics Tutor",
+    bio: "Specialises in building strong statistical foundations and exam confidence for students.",
+    image: "/images/about/staffs/maths/grace-maths.jpg",
+    deptId: "maths", deptColor: "#0009af",
+  },
+  {
+    name: "Tehila", role: "Mathematics Tutor",
+    bio: "Passionate about making Maths enjoyable through interactive problem-solving examples.",
+    image: "/images/about/staffs/maths/tehila-maths.jpg",
+    deptId: "maths", deptColor: "#0009af",
+  },
+  {
+    name: "Tomiwa", role: "Mathematics Tutor",
+    bio: "Dedicated to helping students achieve their target grades through consistent practice and tailored revision plans.",
+    image: "/images/about/staffs/maths/tomiwa-maths.jpg",
+    deptId: "maths", deptColor: "#0009af",
+  },
+   {
+    name: "Damilola", role: "English Tutor",
+    bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
+    image: "/images/about/staffs/english/damilola-english.jpg",
+    deptId: "english", deptColor: "#6D28D9",
+  },
+  {
+    name: "Ibrahim", role: "Chemistry Tutor",
+    bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
+    image: "/images/about/staffs/chemistry/ibrahim-chemistry.jpg",
+    deptId: "chemistry", deptColor: "#9a3412",
+  },
+  {
     name: "Gboyega Afolalu", role: "CEO/FOUNDER",
     bio: "Driven by a passion for education and a commitment to excellence, he has built MathBridge into a trusted platform that helps students excel in their academic pursuits. ",
-    image: "/images/about/staffs/others/gboyega-others.jpg",
+    image: "/images/about/staffs/others/Gboyega-others.jpg",
     deptId: "others", deptColor: "#374151",
   },
   {
@@ -56,52 +116,10 @@ const allStaff: StaffMember[] = [
     deptId: "others", deptColor: "#374151",
   },
   {
-    name: "Bolaji", role: "Head of Mathematics",
-    bio: "Expert in GCSE, WAEC Maths with a talent for breaking down complex problems into simple, logical steps.",
-    image: "/images/about/staffs/maths/bolaji-maths.jpg",
-    deptId: "maths", deptColor: "#0009af", isHOD: true,
-  },
-  {
-    name: "Grace", role: "Mathematics Tutor",
-    bio: "Specialises in building strong statistical foundations and exam confidence for students.",
-    image: "/images/about/staffs/maths/grace-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
-  },
-  {
-    name: "Tehila", role: "Mathematics Tutor",
-    bio: "Passionate about making Maths enjoyable through interactive problem-solving examples.",
-    image: "/images/about/staffs/maths/tehila-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
-  },
-  {
-    name: "Tomiwa", role: "Mathematics Tutor",
-    bio: "Dedicated to helping students achieve their target grades through consistent practice and tailored revision plans.",
-    image: "/images/about/staffs/maths/tomiwa-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
-  },
-  {
-    name: "Damilola", role: "Head of English",
-    bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
-    image: "/images/about/staffs/english/damilola-english.jpg",
-    deptId: "english", deptColor: "#6D28D9", isHOD: true,
-  },
-  {
-    name: "Joshua", role: "Head of Physics",
-    bio: "Makes abstract Physics concepts tangible through vivid diagrams, worked derivations.",
-    image: "/images/about/staffs/physics/joshua-physics.jpg",
-    deptId: "physics", deptColor: "#0e7490", isHOD: true,
-  },
-  {
-    name: "Joy", role: "Head of Biology",
-    bio: "Inspires genuine curiosity about living systems and prepares students for top results in WAEC and GCSE Biology.",
-    image: "/images/about/staffs/biology/joy-biology.jpg",
-    deptId: "biology", deptColor: "#166534", isHOD: true,
-  },
-  {
-    name: "Ibrahim", role: "Head of Chemistry",
-    bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
-    image: "/images/about/staffs/chemistry/ibrahim-chemistry.jpg",
-    deptId: "chemistry", deptColor: "#9a3412", isHOD: true,
+    name: "Milare", role: "Customer Success and Retention Manager",
+    bio: "Ensures every student and parent has a positive experience with MathBridge, from onboarding to ongoing support.",
+    image: "/images/about/staffs/others/milare.jpg",
+    deptId: "others", deptColor: "#374151",
   },
 ];
 
@@ -174,12 +192,8 @@ export default function AboutBridges() {
                 <path d="M0 4 Q25 0 50 4 Q75 8 100 4 Q125 0 150 4 Q175 8 200 4" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            Behind <span style={{ fontFamily: "var(--font-kavoon)", color: "#0009af", position: "relative", display: "inline-block" }}>
-              MATHBridge
-              <svg aria-hidden="true" style={{ position: "absolute", bottom: "-6px", left: 0, width: "100%", height: "8px", overflow: "visible" }} viewBox="0 0 200 8" preserveAspectRatio="none">
-                <path d="M0 4 Q25 0 50 4 Q75 8 100 4 Q125 0 150 4 Q175 8 200 4" stroke="#0009af" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>{" "}
+            Behind MATHBridge
+            
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
             Meet the passionate educators and support team who make world-class learning possible every day.

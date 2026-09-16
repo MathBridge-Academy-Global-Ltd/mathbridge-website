@@ -20,8 +20,8 @@ const services = [
   },
   {
     Icon: Users,
-    title: "Small Group Classes",
-    desc: "Collaborative learning in intimate groups — peer energy, expert guidance.",
+    title: "After School Classes",
+    desc: "Structured learning sessions after regular school hours, led by experienced educators.",
     color: "#c27c00",
     bg: "#FDF3E7",
   },
@@ -42,7 +42,7 @@ const services = [
   {
     Icon: ClipboardList,
     title: "Exam Preparation",
-    desc: "Targeted practice, timed papers and strategy coaching for every major exam.",
+    desc: "SAT, ACT, GCSE, IGCSE, A-Level and other exam prep with a focus on strategy and confidence.",
     color: "#9f1239",
     bg: "#FCEAEE",
   },

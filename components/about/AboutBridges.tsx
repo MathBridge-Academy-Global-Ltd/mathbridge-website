@@ -11,9 +11,10 @@ type StaffMember = {
   role: string;
   bio: string;
   image: string;
-  deptId: string;
+  deptIds: string[];
   deptColor: string;
   isHOD?: boolean;
+  pillRole?: string;
 };
 
 type Tab = { id: string; label: string; color: string };
@@ -35,97 +36,99 @@ const allStaff: StaffMember[] = [
     name: "Bolaji", role: "Head of Mathematics",
     bio: "Expert in GCSE, WAEC Maths with a talent for breaking down complex problems into simple, logical steps.",
     image: "/images/about/staffs/maths/bolaji-maths.jpg",
-    deptId: "maths", deptColor: "#0009af", isHOD: true,
+    deptIds: ["maths"], deptColor: "#0009af", isHOD: true,
   },
   {
     name: "Praise", role: "Head of English",
     bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
     image: "/images/about/staffs/english/praise-english.jpg",
-    deptId: "english", deptColor: "#6D28D9", isHOD: true,
+    deptIds: ["english"], deptColor: "#6D28D9", isHOD: true,
   },
   {
     name: "Joshua", role: "Head of Physics",
     bio: "Makes abstract Physics concepts tangible through vivid diagrams, worked derivations.",
     image: "/images/about/staffs/physics/joshua-physics.jpg",
-    deptId: "physics", deptColor: "#0e7490", isHOD: true,
+    deptIds: ["physics", "others"], deptColor: "#0e7490", isHOD: true, pillRole: "Dev",
   },
   {
     name: "Joy", role: "Head of Biology",
     bio: "Inspires genuine curiosity about living systems and prepares students for top results in WAEC and GCSE Biology.",
     image: "/images/about/staffs/biology/joy-biology.jpg",
-    deptId: "biology", deptColor: "#166534", isHOD: true,
+    deptIds: ["biology"], deptColor: "#166534", isHOD: true,
   },
   {
     name: "Titilope", role: "Head of Chemistry",
     bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
     image: "/images/about/staffs/chemistry/titilope-chemistry.jpg",
-    deptId: "chemistry", deptColor: "#9a3412", isHOD: true,
+    deptIds: ["chemistry"], deptColor: "#9a3412", isHOD: true,
   },
   {
     name: "Grace", role: "Mathematics Tutor",
     bio: "Specialises in building strong statistical foundations and exam confidence for students.",
     image: "/images/about/staffs/maths/grace-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
+    deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Admin",
   },
   {
     name: "Tehila", role: "Mathematics Tutor",
     bio: "Passionate about making Maths enjoyable through interactive problem-solving examples.",
     image: "/images/about/staffs/maths/tehila-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
+    deptIds: ["maths"], deptColor: "#0009af",
   },
   {
     name: "Tomiwa", role: "Mathematics Tutor",
     bio: "Dedicated to helping students achieve their target grades through consistent practice and tailored revision plans.",
     image: "/images/about/staffs/maths/tomiwa-maths.jpg",
-    deptId: "maths", deptColor: "#0009af",
+    deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Dev",
   },
   {
     name: "Damilola", role: "English Tutor",
     bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
     image: "/images/about/staffs/english/damilola-english.jpg",
-    deptId: "english", deptColor: "#6D28D9",
+    deptIds: ["english"], deptColor: "#6D28D9",
   },
   {
     name: "Ibrahim", role: "Chemistry Tutor",
     bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
     image: "/images/about/staffs/chemistry/ibrahim-chemistry.jpg",
-    deptId: "chemistry", deptColor: "#9a3412",
+    deptIds: ["chemistry"], deptColor: "#9a3412",
   },
   {
     name: "Gboyega Afolalu", role: "CEO/FOUNDER",
     bio: "Driven by a passion for education and a commitment to excellence, he has built MathBridge into a trusted platform that helps students excel in their academic pursuits. ",
-    image: "/images/about/staffs/others/gboyega-others.jpg",
-    deptId: "others", deptColor: "#374151",
+    image: "/images/about/staffs/others/gboye-others.jpg",
+    deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Nelson", role: "Director",
     bio: "Drives the strategic direction of MathBridge, ensuring the company stays true to its mission.",
     image: "/images/about/staffs/others/nelson-others.jpg",
-    deptId: "others", deptColor: "#374151",
+    deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Enioluwa", role: "Chief Operating Officer",
     bio: "Oversees daily operations and processes, ensuring every student and tutor has a seamless experience.",
     image: "/images/about/staffs/others/enioluwa-others.jpg",
-    deptId: "others", deptColor: "#374151",
+    deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Favour", role: "Social Media Manager",
     bio: "Tells the MathBridge story across digital platforms and builds the community.",
     image: "/images/about/staffs/others/favour-others.jpg",
-    deptId: "others", deptColor: "#374151",
+    deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Milare", role: "Customer Success and Retention Manager",
     bio: "Ensures every student and parent has a positive experience with MathBridge, from onboarding to ongoing support.",
     image: "/images/about/staffs/others/milare-others.jpg",
-    deptId: "others", deptColor: "#374151",
+    deptIds: ["others"], deptColor: "#374151",
   },
 ];
 
 /* ─────────────────── Staff Card ─────────────────── */
 function StaffCard({ member, index }: { member: StaffMember; index: number }) {
   const col = member.deptColor;
+  const isCEO = member.name === "Gboyega Afolalu";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 22 }}
@@ -133,14 +136,18 @@ function StaffCard({ member, index }: { member: StaffMember; index: number }) {
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.4, delay: index * 0.045, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -5, transition: { duration: 0.18 } }}
-      className="group relative rounded-2xl overflow-hidden bg-white border border-gray-100 flex flex-col h-full transition-[border-color,box-shadow] duration-200 hover:border-gray-200 hover:shadow-[0_8px_28px_-8px_rgba(0,0,0,0.13)]"
+      className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full transition-[border-color,box-shadow] duration-200 hover:shadow-[0_8px_28px_-8px_rgba(0,0,0,0.13)] ${
+        isCEO
+          ? "bg-[#f1aa00]/[0.02] border-[#f1aa00]/30 hover:border-[#f1aa00]/60"
+          : "bg-white border-gray-100 hover:border-gray-200"
+      }`}
     >
-      {member.isHOD && (
+      {member.pillRole && (
         <div
-          className="absolute top-3 left-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black tracking-wider uppercase shadow-sm"
-          style={{ backgroundColor: "#f1aa00", color: "#101928" }}
+          className="absolute top-3 right-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black tracking-wider uppercase shadow-sm"
+          style={{ backgroundColor: "#0009af", color: "#ffffff" }}
         >
-          HOD
+          {member.pillRole}
         </div>
       )}
       <div className="relative w-full aspect-[4/5] overflow-hidden bg-gray-50 shrink-0">
@@ -170,7 +177,7 @@ export default function AboutBridges() {
   const visibleStaff =
     activeTab === "all" ? allStaff :
       activeTab === "hods" ? allStaff.filter((s) => s.isHOD) :
-        allStaff.filter((s) => s.deptId === activeTab);
+        allStaff.filter((s) => s.deptIds.includes(activeTab));
 
   const scrollTabs = (dir: "left" | "right") => {
     tabsRef.current?.scrollBy({ left: dir === "left" ? -120 : 120, behavior: "smooth" });
@@ -253,7 +260,7 @@ export default function AboutBridges() {
           <motion.div key={activeTab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:flex md:flex-wrap md:justify-center md:items-stretch md:gap-5 md:overflow-visible md:pb-0 no-scrollbar">
               {visibleStaff.map((member, i) => (
-                <div key={member.name + "-" + member.deptId} className="w-[72vw] max-w-[240px] shrink-0 snap-center md:w-[220px] lg:w-[230px] xl:w-[240px] h-full">
+                <div key={member.name} className="w-[72vw] max-w-[240px] shrink-0 snap-center md:w-[220px] lg:w-[230px] xl:w-[240px] h-full">
                   <StaffCard member={member} index={i} />
                 </div>
               ))}

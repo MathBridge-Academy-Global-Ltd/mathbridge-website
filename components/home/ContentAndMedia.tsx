@@ -3,8 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { PlayCircle, ArrowRight } from "lucide-react";
+import type { ReelItem } from "@/types/home";
+import WavyText from "@/components/WavyText";
 
-const reels = [
+const reels: ReelItem[] = [
   {
     embedUrl: "https://www.instagram.com/reel/DZ7kw_8SsEB/embed/?autoplay=1",
     postUrl: "https://www.instagram.com/mathbridge.academy/reel/DZ7kw_8SsEB/",
@@ -58,24 +60,7 @@ export default function ContentAndMedia() {
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#101928]">
             See MathBridge in{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Action
-              <svg
-                aria-hidden="true"
-                style={{ position: "absolute", bottom: "-5px", left: 0, width: "100%", height: "6px", overflow: "visible" }}
-                viewBox="0 0 200 6"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
+            <WavyText text="Action" fontColor="text-primaryGold" lineColor="text-primaryGold" />
           </h2>
           <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
             Real worked exam questions, SAT prep breakdowns, and milestones from our online academy.

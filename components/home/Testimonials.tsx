@@ -14,6 +14,7 @@ import {
   MessageCircleHeart,
   TrendingUp,
 } from "lucide-react";
+import WavyText from "@/components/WavyText";
 
 export default function Testimonials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -172,69 +173,9 @@ export default function Testimonials() {
         {/* Heading */}
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-[2.2rem] md:text-[2.6rem] font-extrabold tracking-tight text-gray-900 leading-tight">
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Trusted
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-6px",
-                  left: 0,
-                  width: "100%",
-                  height: "8px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
-                  stroke="#f1aa00"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>{" "}
+            <WavyText text="Trusted" fontColor="text-primaryGold" lineColor="text-primaryGold" />{" "}
             <span style={{ color: "#101928" }}>by Parents, Proven by</span>{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#0009af",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Results
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-6px",
-                  left: 0,
-                  width: "100%",
-                  height: "8px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
-                  stroke="#0009af"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            <WavyText text="Results" fontColor="text-primaryBlue" lineColor="text-primaryBlue" />
           </h2>
           <p className="mt-3.5 text-base text-gray-600 leading-relaxed max-w-lg mx-auto">
             From real parent reviews to certified examination transcripts — here is what happens when personalized mentoring meets dedicated students.

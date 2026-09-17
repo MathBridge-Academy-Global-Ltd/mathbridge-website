@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef, type RefObject } from "react";
+import type { Benefit } from "@/types/home";
+import WavyText from "@/components/WavyText";
 
-const benefits = [
+const benefits: Benefit[] = [
   {
     title: "Personalized Learning Plans",
     description:
@@ -222,37 +224,7 @@ export default function WhyMathbridge() {
         >
           <h2 className="text-[2rem] md:text-[2.25rem] font-extrabold tracking-tight text-gray">
             Why{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#0009af",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              MATHBridge
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-5px",
-                  left: 0,
-                  width: "100%",
-                  height: "7px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
-                  stroke="#0009af"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            <WavyText text="MATHBridge" fontColor="text-primaryBlue" lineColor="text-primaryBlue" />
           </h2>
           <p className="mt-3 text-[0.9375rem] text-gray/60 leading-relaxed">
             We don&apos;t just teach, we build habits, confidence, and a

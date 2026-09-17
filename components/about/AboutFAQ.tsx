@@ -3,8 +3,10 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import type { FAQItem, AboutFAQProps } from "@/types/about";
+import WavyText from "@/components/WavyText";
 
-const faqs = [
+const faqs: FAQItem[] = [
   {
     q: "What subjects does MathBridge tutor?",
     a: "We offer expert 1-on-1 tutoring in Mathematics, English Language, Physics, Biology, and Chemistry across British, Nigerian, and American curricula (WAEC, GCSE, IGCSE, A-Levels, JAMB, and SAT). Have a different subject in mind? We also provide expert instruction in other subjects upon request — simply let us know what you need and we will match you with a dedicated specialist tutor.",
@@ -27,7 +29,7 @@ const faqs = [
   },
 ];
 
-export default function AboutFAQ({ showNetGrid = true }: { showNetGrid?: boolean }) {
+export default function AboutFAQ({ showNetGrid = true }: AboutFAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -75,23 +77,7 @@ export default function AboutFAQ({ showNetGrid = true }: { showNetGrid?: boolean
             {/* Main Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-[#101928] leading-[1.12] mb-5">
               Frequently asked{" "}
-              <span className="text-[#0009af] relative inline-block" style={{ fontFamily: "var(--font-kavoon)" }}>
-                questions
-                <svg
-                  aria-hidden="true"
-                  className="absolute -bottom-2 left-0 w-full h-[6px] overflow-visible"
-                  viewBox="0 0 200 6"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0 3 Q50 0 100 3 T200 3"
-                    stroke="#f1aa00"
-                    strokeWidth="2.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+              <WavyText text="questions" fontColor="text-primaryBlue" lineColor="text-primaryGold" />
             </h2>
 
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-8 max-w-md">

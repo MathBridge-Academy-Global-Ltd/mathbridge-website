@@ -4,22 +4,10 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { StaffMember, Tab } from "@/types/about";
+import WavyText from "@/components/WavyText";
 
 /* ─────────────────── Data ─────────────────── */
-type StaffMember = {
-  name: string;
-  role: string;
-  supportRole?: string;
-  bio: string;
-  image: string;
-  deptIds: string[];
-  deptColor: string;
-  isHOD?: boolean;
-  pillRole?: string;
-};
-
-type Tab = { id: string; label: string; color: string };
-
 /* Tabs: All → Support Team → HODs → Subjects */
 const tabs: Tab[] = [
   { id: "all", label: "All", color: "#0009af" },
@@ -235,14 +223,8 @@ export default function AboutBridges() {
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#101928]">
             The{" "}
-            <span style={{ fontFamily: "var(--font-kavoon)", color: "#f1aa00", position: "relative", display: "inline-block" }}>
-              Bridges
-              <svg aria-hidden="true" style={{ position: "absolute", bottom: "-6px", left: 0, width: "100%", height: "8px", overflow: "visible" }} viewBox="0 0 200 8" preserveAspectRatio="none">
-                <path d="M0 4 Q25 0 50 4 Q75 8 100 4 Q125 0 150 4 Q175 8 200 4" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>{" "}
+            <WavyText text="Bridges" fontColor="text-primaryGold" lineColor="text-primaryGold" />{" "}
             Behind <span className="text-primaryBlue">MATHBridge</span>
-
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
             Meet the passionate educators and support team who make world-class learning possible every day.

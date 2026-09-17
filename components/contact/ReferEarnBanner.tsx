@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Gift, Sparkles } from "lucide-react";
+import WavyText from "@/components/WavyText";
 
 const HOW_IT_WORKS = [
   { num: "01", label: "REFER",               desc: "Tell a parent, student, friend or family member about MathBridge." },
@@ -61,42 +62,8 @@ export default function ReferEarnBanner() {
         {/* ── Eyebrow + Hero Headline ── */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-             <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Refer
-              <svg
-                aria-hidden="true"
-                style={{ position: "absolute", bottom: "-5px", left: 0, width: "100%", height: "6px", overflow: "visible" }}
-                viewBox="0 0 200 6"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-            </span> · Enrol ·{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Earn
-              <svg
-                aria-hidden="true"
-                style={{ position: "absolute", bottom: "-5px", left: 0, width: "100%", height: "6px", overflow: "visible" }}
-                viewBox="0 0 200 6"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
+            <WavyText text="Refer" fontColor="text-primaryGold" lineColor="text-primaryGold" /> · Enrol ·{" "}
+            <WavyText text="Earn" fontColor="text-primaryGold" lineColor="text-primaryGold" />
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">

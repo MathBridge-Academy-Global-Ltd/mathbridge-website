@@ -2,8 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, type RefObject } from "react";
+import type { Step } from "@/types/home";
+import WavyText from "@/components/WavyText";
 
-const steps = [
+const steps: Step[] = [
   {
     number: 1,
     color: "#0009af",
@@ -43,7 +45,7 @@ function StepNode({
   step,
   delay,
 }: {
-  step: (typeof steps)[number];
+  step: Step;
   delay: number;
 }) {
   return (
@@ -290,37 +292,7 @@ export default function FourSteps() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-[2rem] md:text-[2.25rem] font-extrabold tracking-tight text-gray">
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Four Steps
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-5px",
-                  left: 0,
-                  width: "100%",
-                  height: "7px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
-                  stroke="#f1aa00"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>{" "}
+            <WavyText text="Four Steps" fontColor="text-primaryGold" lineColor="text-primaryGold" />{" "}
             <span style={{ color: "#101928" }}>to Success</span>
           </h2>
           <p className="mt-3 text-[0.9375rem] text-gray/60 leading-relaxed">

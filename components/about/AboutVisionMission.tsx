@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Compass, Target, Rocket, ShieldCheck } from "lucide-react";
+import WavyText from "@/components/WavyText";
 
 export default function AboutVisionMission() {
   return (
@@ -58,37 +59,7 @@ export default function AboutVisionMission() {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#101928]">
             Our{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Purpose
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-6px",
-                  left: 0,
-                  width: "100%",
-                  height: "8px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 8"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 4 Q25 0 50 4 Q75 8 100 4 Q125 0 150 4 Q175 8 200 4"
-                  stroke="#f1aa00"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>{" "}
+            <WavyText text="Purpose" fontColor="text-primaryGold" lineColor="text-primaryGold" />{" "}
             & Direction
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600">

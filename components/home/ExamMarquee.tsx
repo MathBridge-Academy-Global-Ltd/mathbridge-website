@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ExamItem } from "@/types/home";
 
-const exams = [
+const exams: ExamItem[] = [
   { label: "SAT",     desc: "Scholastic Assessment Test" },
   { label: "GCSE",    desc: "General Certificate of Secondary Education" },
   { label: "IGCSE",   desc: "International GCSE" },

@@ -6,6 +6,7 @@ import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutBridges from "@/components/about/AboutBridges";
 import AboutFAQ from "@/components/about/AboutFAQ";
 import JambBanner from "@/components/home/JambBanner";
+import WavyText from "@/components/WavyText";
 
 export default function AboutPage() {
   return (
@@ -15,37 +16,7 @@ export default function AboutPage() {
         headline={
           <>
             <span className="text-white">Born From a </span>
-            <span
-              style={{
-                fontFamily: "var(--font-kavoon)",
-                color: "#f1aa00",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Passion
-              <svg
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  bottom: "-5px",
-                  left: 0,
-                  width: "100%",
-                  height: "7px",
-                  overflow: "visible",
-                }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
-                  stroke="#f1aa00"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            <WavyText text="Passion" fontColor="text-primaryGold" lineColor="text-primaryGold" />
             <br />
             <span className="text-white">for </span>
             <span style={{ fontFamily: "var(--font-kavoon)", color: "#f1aa00" }}>

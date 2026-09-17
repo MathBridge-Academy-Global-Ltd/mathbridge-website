@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
+import type { SubjectHeroProps } from "@/types/about";
 
 /* ─────────────────────────── animation helpers ─────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -21,21 +22,6 @@ const eduSymbols = [
   { symbol: "f(x)", x: "6%", y: "44%", size: 16, rotate: -10, color: "rgba(255,255,255,0.08)", delay: 0.9 },
   { symbol: "÷", x: "78%", y: "52%", size: 20, rotate: -8, color: "rgba(255,255,255,0.06)", delay: 0.4 },
 ];
-
-interface SubjectHeroProps {
-  /** Optional page-specific background photo (defaults to about-hero.jpg) */
-  bgImage?: string;
-  /** Eyebrow label */
-  eyebrow?: string;
-  /** Hero headline (JSX or string) */
-  headline: React.ReactNode;
-  /** Short body copy */
-  copy: string;
-  /** Primary CTA */
-  cta?: { label: string; href: string };
-  /** Secondary CTA */
-  ctaSecondary?: { label: string; href: string };
-}
 
 export default function SubjectHero({
   bgImage = "/images/about/about-hero.jpg",

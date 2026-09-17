@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight, Send, Sparkles } from "lucide-react";
+import WavyText from "@/components/WavyText";
 
 function TelegramIcon({ size = 18, className = "" }: { size?: number; className?: string }) {
   return (
@@ -62,24 +63,7 @@ export default function JambBanner() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Writing   <span
-                style={{
-                  fontFamily: "var(--font-kavoon)",
-                  color: "#f1aa00",
-                  position: "relative",
-                  display: "inline-block",
-                }}
-              >
-                JAMB IN 2027
-                <svg
-                  aria-hidden="true"
-                  style={{ position: "absolute", bottom: "-5px", left: 0, width: "100%", height: "6px", overflow: "visible" }}
-                  viewBox="0 0 200 6"
-                  preserveAspectRatio="none"
-                >
-                  <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>? <br /> Join Our Free Student Prep Group
+              Writing <WavyText text="JAMB IN 2027" fontColor="text-primaryGold" lineColor="text-primaryGold" />? <br /> Join Our Free Student Prep Group
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-emerald-100/90 leading-relaxed">

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star, CheckCircle, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import type { StatItem, EduSymbol, FloatingIcon } from "@/types/home";
+import WavyText from "@/components/WavyText";
 
 /* ─────────────────────────── animation helpers ─────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -13,7 +15,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 /* ────────────────────────────── stats data ─────────────────────────────── */
-const stats = [
+const stats: StatItem[] = [
   { value: "1k+", label: "Hours Taught" },
   { value: "1:1",  label: "Personalised Learning" },
   { value: "5",    label: "Parent Satisfaction", star: true },
@@ -29,7 +31,7 @@ const trustItems = [
 
 /* ──────────────────── educational background symbols ───────────────────── */
 // Each item: { symbol, x, y, size, rotate, color, delay }
-const eduSymbols = [
+const eduSymbols: EduSymbol[] = [
   { symbol: "π",  x: "4%",  y: "12%", size: 28, rotate: -12, color: "rgba(0,9,175,0.10)",  delay: 0 },
   { symbol: "∑",  x: "12%", y: "68%", size: 26, rotate: 8,   color: "rgba(0,9,175,0.08)",  delay: 0.3 },
   { symbol: "√",  x: "88%", y: "22%", size: 24, rotate: 6,   color: "rgba(241,170,0,0.13)", delay: 0.6 },
@@ -76,7 +78,7 @@ function FlaskIcon({ style }: { style?: React.CSSProperties }) {
   );
 }
 
-const floatingIcons = [
+const floatingIcons: FloatingIcon[] = [
   { Icon: PencilIcon, x: "8%",  y: "30%", size: 28, rotate: 20,  color: "rgba(0,9,175,0.12)",   delay: 0.2 },
   { Icon: AtomIcon,   x: "78%", y: "12%", size: 34, rotate: -15, color: "rgba(0,9,175,0.09)",   delay: 0.5 },
   { Icon: BookIcon,   x: "60%", y: "78%", size: 30, rotate: 8,   color: "rgba(241,170,0,0.14)", delay: 0.3 },
@@ -163,17 +165,7 @@ export default function Hero() {
           >
             <span style={{ fontFamily:"var(--font-kavoon)", color:"#0009af" }}>Personalised</span>{" "}Tutoring
             <br />That Builds{" "}
-            <span style={{ fontFamily:"var(--font-kavoon)", color:"#f1aa00", position:"relative", display:"inline-block" }}>
-              Confidence
-              <svg
-                aria-hidden="true"
-                style={{ position:"absolute", bottom:"-5px", left:0, width:"100%", height:"7px", overflow:"visible" }}
-                viewBox="0 0 200 7"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
+            <WavyText text="Confidence" fontColor="text-primaryGold" lineColor="text-primaryGold" />
             <br />&amp;{" "}
             <span style={{ fontFamily:"var(--font-kavoon)", color:"#0009af" }}>Results</span>
           </motion.h1>

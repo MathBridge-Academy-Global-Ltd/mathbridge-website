@@ -9,6 +9,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 type StaffMember = {
   name: string;
   role: string;
+  supportRole?: string;
   bio: string;
   image: string;
   deptIds: string[];
@@ -46,6 +47,7 @@ const allStaff: StaffMember[] = [
   },
   {
     name: "Joshua", role: "Head of Physics",
+    supportRole: "Technical Support",
     bio: "Makes abstract Physics concepts tangible through vivid diagrams, worked derivations.",
     image: "/images/about/staffs/physics/joshua-physics.jpg",
     deptIds: ["physics", "others"], deptColor: "#0e7490", isHOD: true, pillRole: "Dev",
@@ -64,6 +66,7 @@ const allStaff: StaffMember[] = [
   },
   {
     name: "Grace", role: "Mathematics Tutor",
+    supportRole: "Administrator",
     bio: "Specialises in building strong statistical foundations and exam confidence for students.",
     image: "/images/about/staffs/maths/grace-maths.jpg",
     deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Admin",
@@ -76,6 +79,7 @@ const allStaff: StaffMember[] = [
   },
   {
     name: "Tomiwa", role: "Mathematics Tutor",
+    supportRole: "Technical Support",
     bio: "Dedicated to helping students achieve their target grades through consistent practice and tailored revision plans.",
     image: "/images/about/staffs/maths/tomiwa-maths.jpg",
     deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Dev",
@@ -125,9 +129,35 @@ const allStaff: StaffMember[] = [
 ];
 
 /* ─────────────────── Staff Card ─────────────────── */
-function StaffCard({ member, index }: { member: StaffMember; index: number }) {
-  const col = member.deptColor;
+function StaffCard({
+  member,
+  index,
+  activeTab,
+}: {
+  member: StaffMember;
+  index: number;
+  activeTab: string;
+}) {
   const isCEO = member.name === "Gboyega Afolalu";
+  const isSupportTab = activeTab === "others";
+
+  // If in Support Team tab, change title to Technical Support / Administrator
+  const displayRole =
+    isSupportTab && member.supportRole ? member.supportRole : member.role;
+
+  const col = isSupportTab ? "#374151" : member.deptColor;
+
+  // Pill badge:
+  // On Support Team tab: show "HOD" or "Tutor" to highlight their dual academic role
+  // On Subject or All tabs: show their pillRole ("Dev" or "Admin")
+  const pillLabel =
+    isSupportTab && member.supportRole
+      ? member.isHOD
+        ? "HOD"
+        : "Tutor"
+      : member.pillRole;
+
+  const isHODPill = pillLabel === "HOD";
 
   return (
     <motion.div
@@ -142,12 +172,15 @@ function StaffCard({ member, index }: { member: StaffMember; index: number }) {
           : "bg-white border-gray-100 hover:border-gray-200"
       }`}
     >
-      {member.pillRole && (
+      {pillLabel && (
         <div
           className="absolute top-3 right-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black tracking-wider uppercase shadow-sm"
-          style={{ backgroundColor: "#0009af", color: "#ffffff" }}
+          style={{
+            backgroundColor: isHODPill ? "#f1aa00" : "#0009af",
+            color: isHODPill ? "#101928" : "#ffffff",
+          }}
         >
-          {member.pillRole}
+          {pillLabel}
         </div>
       )}
       <div className="relative w-full aspect-[4/5] overflow-hidden bg-gray-50 shrink-0">
@@ -157,7 +190,7 @@ function StaffCard({ member, index }: { member: StaffMember; index: number }) {
         <div className="flex items-center gap-2 mb-0.5">
           <div className="w-5 h-[2px] rounded-full shrink-0" style={{ backgroundColor: col }} />
           <span className="text-[11px] font-black uppercase tracking-wider leading-none" style={{ color: col }}>
-            {member.role.trim()}
+            {displayRole.trim()}
           </span>
         </div>
         <h3 className="text-base font-black text-[#101928] tracking-tight leading-snug">{member.name}</h3>
@@ -175,9 +208,18 @@ export default function AboutBridges() {
 
   const activeTabData = tabs.find((t) => t.id === activeTab)!;
   const visibleStaff =
-    activeTab === "all" ? allStaff :
-      activeTab === "hods" ? allStaff.filter((s) => s.isHOD) :
-        allStaff.filter((s) => s.deptIds.includes(activeTab));
+    activeTab === "all"
+      ? allStaff
+      : activeTab === "hods"
+      ? allStaff.filter((s) => s.isHOD)
+      : activeTab === "others"
+      ? [
+          // 1. Core Support Team first
+          ...allStaff.filter((s) => s.deptIds.includes("others") && !s.supportRole),
+          // 2. Cross-functional Dev & Admin staff at the end
+          ...allStaff.filter((s) => s.deptIds.includes("others") && s.supportRole),
+        ]
+      : allStaff.filter((s) => s.deptIds.includes(activeTab));
 
   const scrollTabs = (dir: "left" | "right") => {
     tabsRef.current?.scrollBy({ left: dir === "left" ? -120 : 120, behavior: "smooth" });
@@ -260,8 +302,8 @@ export default function AboutBridges() {
           <motion.div key={activeTab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:flex md:flex-wrap md:justify-center md:items-stretch md:gap-5 md:overflow-visible md:pb-0 no-scrollbar">
               {visibleStaff.map((member, i) => (
-                <div key={member.name} className="w-[72vw] max-w-[240px] shrink-0 snap-center md:w-[220px] lg:w-[230px] xl:w-[240px] h-full">
-                  <StaffCard member={member} index={i} />
+                <div key={member.name + "-" + activeTab} className="w-[72vw] max-w-[240px] shrink-0 snap-center md:w-[220px] lg:w-[230px] xl:w-[240px] h-full">
+                  <StaffCard member={member} index={i} activeTab={activeTab} />
                 </div>
               ))}
             </div>

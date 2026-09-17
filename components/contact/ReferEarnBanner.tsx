@@ -9,7 +9,7 @@ const HOW_IT_WORKS = [
   { num: "04", label: "YOU GET REWARDED",    desc: "You receive your tuition credit or cash reward." },
 ];
 
-const WHAT_YOU_CAN_REFER = ["GCSE", "A-Levels", "SAT", "JAMB", "KS1–KS3", "11+ & 13+"];
+const WHAT_YOU_CAN_REFER = ["GCSE", "A-Levels", "SAT", "JAMB", "KS1–KS3", "11+ & 13+", "Other Subjects"];
 
 const WHY_MATHBRIDGE = [
   "Experienced Tutors",
@@ -22,34 +22,37 @@ export default function ReferEarnBanner() {
   return (
     <section
       id="refer-and-earn"
-      className="relative overflow-hidden w-full text-white"
-      style={{
-        background: "linear-gradient(135deg, #00075c 0%, #0009af 50%, #00075c 100%)",
-      }}
+      className="relative overflow-hidden w-full text-white bg-[#0009af]"
       aria-label="Refer and Earn Banner"
     >
-      {/* ── Net Grid Background Pattern — same as JambBanner ── */}
+      {/* ── BACKGROUND.PNG TEXTURE LAYER (Vivid & Visible Math Equations) ── */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute inset-0 pointer-events-none select-none z-0"
         style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.16) 1px, transparent 1px)
-          `,
-          backgroundSize: "36px 36px",
+          backgroundImage: "url('/background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          mixBlendMode: "screen",
+          opacity: 0.80,
         }}
       />
 
-      {/* ── Subtle Ambient Glows — same approach as JambBanner ── */}
+      {/* Subtle Gradient Vignette to keep content extra crisp */}
       <div
         aria-hidden="true"
-        className="absolute -top-24 right-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none"
+        className="absolute inset-0 pointer-events-none z-[1] bg-gradient-to-b from-[#00075c]/70 via-transparent to-[#00075c]/85"
+      />
+
+      {/* ── Subtle Ambient Glows ── */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 right-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none z-[1]"
         style={{ background: "rgba(0, 9, 175, 0.35)" }}
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-24 left-1/4 w-96 h-96 rounded-full bg-[#f1aa00]/10 blur-3xl pointer-events-none"
+        className="absolute -bottom-24 left-1/4 w-96 h-96 rounded-full bg-[#f1aa00]/10 blur-3xl pointer-events-none z-[1]"
       />
 
       {/* ── Content ── */}
@@ -57,13 +60,25 @@ export default function ReferEarnBanner() {
 
         {/* ── Eyebrow + Hero Headline ── */}
         <div className="text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/25 text-white/80 text-xs font-bold tracking-wider uppercase mb-4 backdrop-blur-sm">
-            <Sparkles size={13} className="text-[#f1aa00]" />
-            <span>Refer &amp; Earn Rewards</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Refer · Enrol ·{" "}
+             <span
+              style={{
+                fontFamily: "var(--font-kavoon)",
+                color: "#f1aa00",
+                position: "relative",
+                display: "inline-block",
+              }}
+            >
+              Refer
+              <svg
+                aria-hidden="true"
+                style={{ position: "absolute", bottom: "-5px", left: 0, width: "100%", height: "6px", overflow: "visible" }}
+                viewBox="0 0 200 6"
+                preserveAspectRatio="none"
+              >
+                <path d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              </svg>
+            </span> · Enrol ·{" "}
             <span
               style={{
                 fontFamily: "var(--font-kavoon)",

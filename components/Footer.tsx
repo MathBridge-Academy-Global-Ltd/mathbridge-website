@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, ChevronRight } from "lucide-react";
+import { Mail, Phone, ChevronRight } from "lucide-react";
 
 /* ── Brand SVGs not available in lucide-react ── */
 function WhatsAppIcon({ size = 15, className = "" }: { size?: number; className?: string }) {
@@ -55,6 +55,7 @@ const pageLinks = [
 ];
 
 const contactLinks = [
+  { href: "tel:+2347048615201", label: "+234-704-861-5201", Icon: Phone },
   { href: "mailto:mathbridge.ng@gmail.com", label: "mathbridge.ng@gmail.com", Icon: Mail },
   { href: "https://wa.me/2347048615201", label: "WhatsApp", Icon: WhatsAppIcon },
   { href: "https://www.instagram.com/mathbridge.academy?stkn=MXRkc3oxYXowc3QxaQ==", label: "Instagram", Icon: InstagramIcon },

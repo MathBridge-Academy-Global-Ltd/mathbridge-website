@@ -3,6 +3,7 @@
 import { Divide, BookOpen, Atom, FlaskConical, Sprout } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Subject = {
   icon: LucideIcon;
@@ -171,7 +172,7 @@ export default function Subjects() {
             </motion.div>
           ))}
 
-          {/* CTA card */}
+          {/* CTA card — styled like the Royal Blue Testimonial card */}
           <motion.div
             custom={subjects.length}
             variants={cardVariants}
@@ -180,44 +181,42 @@ export default function Subjects() {
             viewport={{ once: true, margin: "-40px" }}
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
-            style={{
-              borderRadius: "20px",
-              padding: "28px",
-              background: "linear-gradient(135deg, rgba(0,9,175,0.75) 0%, rgba(0,20,224,0.75) 100%), url('/background.png') center/cover no-repeat",
-              boxShadow: "0 8px 32px rgba(0,9,175,0.22)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: "12px",
-              cursor: "default",
-            }}
+            className="relative overflow-hidden rounded-[20px] bg-[#0009af] border border-white/20 shadow-[0_16px_40px_rgba(0,9,175,0.22)] transition-all duration-300 hover:shadow-[0_24px_50px_rgba(0,9,175,0.32)] flex flex-col justify-center cursor-default min-h-[220px]"
           >
-            <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "white", lineHeight: 1.4 }}>
-              Not sure which subject?
-            </p>
-            <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.70)", lineHeight: 1.6 }}>
-              Book a free 30-min demo and we&apos;ll match your child with the right tutor.
-            </p>
-            <a
-              href="/contact"
+            {/* ── BACKGROUND.PNG TEXTURE LAYER (Vivid & Visible Math Equations) ── */}
+            <div
+              className="absolute inset-0 pointer-events-none select-none z-0"
               style={{
-                marginTop: "4px",
-                display: "inline-flex",
-                alignSelf: "flex-start",
-                alignItems: "center",
-                gap: "6px",
-                backgroundColor: "#f1aa00",
-                color: "#101928",
-                fontSize: "13px",
-                fontWeight: 700,
-                padding: "9px 18px",
-                borderRadius: "999px",
-                textDecoration: "none",
-                transition: "opacity 0.2s",
+                backgroundImage: "url('/background.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                mixBlendMode: "screen",
+                opacity: 0.99,
               }}
-            >
-              Book Free Demo →
-            </a>
+              aria-hidden="true"
+            />
+
+            {/* Subtle Gradient Vignette to keep text extra crisp */}
+            <div
+              className="absolute inset-0 pointer-events-none z-[1] bg-gradient-to-b from-[#0009af]/75 via-transparent to-[#000673]/90"
+              aria-hidden="true"
+            />
+
+            {/* Card Content */}
+            <div className="relative z-10 p-7 flex flex-col justify-center gap-3 text-white">
+              <p className="text-[1.15rem] font-bold text-white leading-snug">
+                Not sure which subject?
+              </p>
+              <p className="text-[0.875rem] text-white/85 leading-relaxed">
+                Book a free 30-min demo and we&apos;ll match your child with the right tutor.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-1 inline-flex self-start items-center gap-1.5 bg-[#f1aa00] text-[#101928] text-[13px] font-bold px-4 py-2 rounded-full no-underline transition-all duration-200 hover:brightness-105 hover:shadow-md"
+              >
+                Book Free Demo →
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>

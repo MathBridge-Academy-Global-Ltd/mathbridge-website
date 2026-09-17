@@ -71,7 +71,7 @@ export default function Footer() {
           src="/background.png"
           alt=""
           fill
-          className="object-cover opacity-90"
+          className="object-cover opacity-99"
           quality={90}
         />
       </div>

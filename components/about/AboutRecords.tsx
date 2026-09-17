@@ -39,7 +39,6 @@ export default function AboutRecords() {
   const hoursCount = useCountUp(1000, 1800, inView);
   const staffCount = useCountUp(20, 1400, inView);
   const continentsCount = useCountUp(3, 1200, inView);
-  const subjectsCount = useCountUp(5, 1200, inView);
   const satisfactionCount = useCountUp(98, 1600, inView);
   const examSuccessCount = useCountUp(95, 1600, inView);
 
@@ -304,7 +303,7 @@ export default function AboutRecords() {
             </div>
           </motion.div>
 
-          {/* Card 3B: 5+ Subjects */}
+          {/* Card 3B: Numerous Subjects (Infinity) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -321,16 +320,16 @@ export default function AboutRecords() {
                   <BookOpen className="w-4 h-4 text-[#0009af]" />
                 </div>
               </div>
-              <div className="text-5xl font-black text-[#101928] tabular-nums tracking-tight mb-2">
-                {subjectsCount}+
+              <div className="text-5xl font-black text-[#0009af] tracking-tight mb-2 flex items-center gap-1">
+                <span className="text-6xl leading-none">∞</span>
               </div>
-              <p className="text-sm font-bold text-gray-800">Core Academic Disciplines</p>
+              <p className="text-sm font-bold text-gray-800">Numerous Subjects</p>
               <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">
-                Mathematics, English, Physics, Chemistry, Biology — with specialized electives.
+                Mathematics, English, Physics, Chemistry, Biology — and any requested custom subject.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-gray-100 text-[11px] font-semibold text-[#0009af] flex items-center gap-1">
-              <span>STEM & Humanities focus</span>
+              <span>Unlimited subject offerings</span>
             </div>
           </motion.div>
 

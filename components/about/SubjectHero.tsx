@@ -13,13 +13,13 @@ const fadeUp = (delay = 0) => ({
 
 /* ──────────────────── floating math symbols ────────────── */
 const eduSymbols = [
-  { symbol: "π",    x: "4%",  y: "12%", size: 32, rotate: -12, color: "rgba(255,255,255,0.10)", delay: 0 },
-  { symbol: "∑",    x: "10%", y: "70%", size: 28, rotate: 8,   color: "rgba(255,255,255,0.08)", delay: 0.3 },
-  { symbol: "√",    x: "88%", y: "18%", size: 26, rotate: 6,   color: "rgba(241,170,0,0.15)",   delay: 0.6 },
-  { symbol: "∞",    x: "84%", y: "75%", size: 32, rotate: -5,  color: "rgba(255,255,255,0.07)", delay: 0.2 },
-  { symbol: "Δ",    x: "52%", y: "5%",  size: 24, rotate: 10,  color: "rgba(241,170,0,0.12)",   delay: 0.5 },
-  { symbol: "f(x)", x: "6%",  y: "44%", size: 16, rotate: -10, color: "rgba(255,255,255,0.08)", delay: 0.9 },
-  { symbol: "÷",    x: "78%", y: "52%", size: 20, rotate: -8,  color: "rgba(255,255,255,0.06)", delay: 0.4 },
+  { symbol: "π", x: "4%", y: "12%", size: 32, rotate: -12, color: "rgba(255,255,255,0.10)", delay: 0 },
+  { symbol: "∑", x: "10%", y: "70%", size: 28, rotate: 8, color: "rgba(255,255,255,0.08)", delay: 0.3 },
+  { symbol: "√", x: "88%", y: "18%", size: 26, rotate: 6, color: "rgba(241,170,0,0.15)", delay: 0.6 },
+  { symbol: "∞", x: "84%", y: "75%", size: 32, rotate: -5, color: "rgba(255,255,255,0.07)", delay: 0.2 },
+  { symbol: "Δ", x: "52%", y: "5%", size: 24, rotate: 10, color: "rgba(241,170,0,0.12)", delay: 0.5 },
+  { symbol: "f(x)", x: "6%", y: "44%", size: 16, rotate: -10, color: "rgba(255,255,255,0.08)", delay: 0.9 },
+  { symbol: "÷", x: "78%", y: "52%", size: 20, rotate: -8, color: "rgba(255,255,255,0.06)", delay: 0.4 },
 ];
 
 interface SubjectHeroProps {
@@ -43,7 +43,7 @@ export default function SubjectHero({
   headline,
   copy,
   cta = { label: "Book a Free Demo", href: "/contact" },
-  ctaSecondary = { label: "Our Subjects", href: "/#subjects" },
+  ctaSecondary = { label: "Explore Programs", href: "#services" },
 }: SubjectHeroProps) {
   return (
     <section className="relative overflow-hidden">
@@ -82,7 +82,7 @@ export default function SubjectHero({
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(0,9,175,0.78) 0%, rgba(0,9,175,0.84) 60%)",
+            "linear-gradient(to bottom, rgba(21, 21, 22, 0.78) 0%, rgba(17, 17, 22, 0.84) 60%)",
         }}
       />
 
@@ -108,7 +108,7 @@ export default function SubjectHero({
             animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
             transition={{
               opacity: { duration: 0.8, delay: s.delay },
-              scale:   { duration: 0.8, delay: s.delay },
+              scale: { duration: 0.8, delay: s.delay },
               y: { duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: s.delay },
             }}
             style={{

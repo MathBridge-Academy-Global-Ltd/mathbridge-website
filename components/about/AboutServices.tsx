@@ -42,7 +42,7 @@ const services = [
   {
     Icon: ClipboardList,
     title: "Exam Preparation",
-    desc: "SAT, ACT, GCSE, IGCSE, A-Level and other exam prep with a focus on strategy and confidence.",
+    desc: "SAT, JAMB, GCSE, IGCSE, A-Level and other exam prep with a focus on strategy and confidence.",
     color: "#9f1239",
     bg: "#FCEAEE",
   },
@@ -57,7 +57,7 @@ const services = [
 
 export default function AboutServices() {
   return (
-    <section className="relative overflow-hidden py-20 bg-[#FAFBFF]">
+    <section id="services" className="relative overflow-hidden py-20 bg-[#FAFBFF]">
       {/* Net grid background pattern */}
       <div
         aria-hidden="true"

@@ -102,7 +102,37 @@ export default function Testimonials() {
               </svg>
             </span>{" "}
             <span style={{ color: "#101928" }}>
-              by Parents, Proven by Results
+              by Parents, Proven by    <span
+              style={{
+                fontFamily: "var(--font-kavoon)",
+                color: "#0009af",
+                position: "relative",
+                display: "inline-block",
+              }}
+            >
+              Results
+              <svg
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  bottom: "-5px",
+                  left: 0,
+                  width: "100%",
+                  height: "7px",
+                  overflow: "visible",
+                }}
+                viewBox="0 0 200 7"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0 3.5 Q25 0 50 3.5 Q75 7 100 3.5 Q125 0 150 3.5 Q175 7 200 3.5"
+                  stroke="#0009af"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
             </span>
           </h2>
           <p className="mt-3 text-[0.9375rem] text-gray/60 leading-relaxed">

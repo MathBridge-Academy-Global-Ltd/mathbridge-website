@@ -79,7 +79,7 @@ const allStaff: StaffMember[] = [
     image: "/images/about/staffs/maths/tomiwa-maths.jpg",
     deptId: "maths", deptColor: "#0009af",
   },
-   {
+  {
     name: "Damilola", role: "English Tutor",
     bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
     image: "/images/about/staffs/english/damilola-english.jpg",
@@ -192,8 +192,8 @@ export default function AboutBridges() {
                 <path d="M0 4 Q25 0 50 4 Q75 8 100 4 Q125 0 150 4 Q175 8 200 4" stroke="#f1aa00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            Behind MATHBridge
-            
+            Behind <span className="text-primaryBlue">MATHBridge</span>
+
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
             Meet the passionate educators and support team who make world-class learning possible every day.

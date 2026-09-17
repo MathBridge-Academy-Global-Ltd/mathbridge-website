@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Teachers, Kavoon } from "next/font/google";
+import { Montserrat, Kavoon } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const teachers = Teachers({
-  variable: "--font-teachers",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const kavoon = Kavoon({
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${teachers.variable} ${kavoon.variable} h-full antialiased`}>
+    <html lang="en" className={`${montserrat.variable} ${kavoon.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
         <main className="flex-1 pt-[72px]">{children}</main>

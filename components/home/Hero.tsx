@@ -14,7 +14,7 @@ const fadeUp = (delay = 0) => ({
 
 /* ────────────────────────────── stats data ─────────────────────────────── */
 const stats = [
-  { value: "650+", label: "Hours Taught" },
+  { value: "1000+", label: "Hours Taught" },
   { value: "1:1",  label: "Personalised Learning" },
   { value: "5",    label: "Parent Satisfaction", star: true },
   { value: "100%", label: "Progress Report" },
@@ -219,13 +219,13 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/about"
+              href="#media"
               id="hero-cta-watch"
               style={{ display:"inline-flex", alignItems:"center", gap:"7px", padding:"13px 22px", backgroundColor:"transparent", color:"#0009af", fontSize:"15px", fontWeight:600, borderRadius:"999px", border:"1.5px solid rgba(0,9,175,0.22)", transition:"all 0.2s ease", textDecoration:"none" }}
               className="hover:border-[rgba(0,9,175,0.45)] hover:-translate-y-[2px] hover:bg-[rgba(0,9,175,0.04)] active:translate-y-0"
             >
               <PlayCircle size={16} />
-              Watch Demo
+              Watch Tutorials
             </Link>
           </motion.div>
         </div>

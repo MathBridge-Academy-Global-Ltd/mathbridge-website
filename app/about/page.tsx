@@ -4,7 +4,8 @@ import AboutRecords from "@/components/about/AboutRecords";
 import AboutServices from "@/components/about/AboutServices";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutBridges from "@/components/about/AboutBridges";
-import AboutFAQ from "@/components/about/AboutFAQ"
+import AboutFAQ from "@/components/about/AboutFAQ";
+import JambBanner from "@/components/home/JambBanner";
 
 export default function AboutPage() {
   return (
@@ -52,7 +53,7 @@ export default function AboutPage() {
             </span>
           </>
         }
-        copy="Founded in 2025, MathBridge started with one subject and one goal — to make expert tutoring personal. Today we deliver live 1-on-1 sessions across 5+ subjects to students on 3 continents."
+        copy="Founded in 2025, MathBridge started with one subject and one goal — to make expert tutoring personal. Today we deliver live 1-on-1 sessions across numerous subjects to students on 3 continents."
       />
       <ExamMarquee />
       <AboutVisionMission />
@@ -60,6 +61,7 @@ export default function AboutPage() {
       <AboutServices />
       <AboutBridges />
       <AboutFAQ />
+      <JambBanner />
     </>
   );
 }

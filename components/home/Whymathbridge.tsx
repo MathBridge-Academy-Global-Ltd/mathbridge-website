@@ -193,7 +193,7 @@ const floatAnimMed = {
   transition: { duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
 };
 
-export default function WhyMathBridge() {
+export default function WhyMathbridge() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef as RefObject<Element>, { once: true, margin: "-100px" });
 

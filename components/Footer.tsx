@@ -91,7 +91,7 @@ export default function Footer() {
               alt="MathBridge Logo"
               width={130}
               height={38}
-              className="h-10 w-auto object-contain [filter:brightness(0)_invert(1)] opacity-95 transition-opacity duration-200 hover:opacity-100"
+              className="h-14 w-auto object-contain [filter:brightness(0)_invert(1)] opacity-95 transition-opacity duration-200 hover:opacity-100"
             />
           </Link>
           <p className="text-[0.9rem] leading-[1.75] text-white/70 m-0">

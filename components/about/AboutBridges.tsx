@@ -40,7 +40,7 @@ const allStaff: StaffMember[] = [
   {
     name: "Praise", role: "Head of English",
     bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
-    image: "/images/about/staffs/english/Praise.jpg",
+    image: "/images/about/staffs/english/praise-english.jpg",
     deptId: "english", deptColor: "#6D28D9", isHOD: true,
   },
   {
@@ -58,7 +58,7 @@ const allStaff: StaffMember[] = [
   {
     name: "Titilope", role: "Head of Chemistry",
     bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
-    image: "/images/about/staffs/chemistry/Titilope.jpg",
+    image: "/images/about/staffs/chemistry/titilope-chemistry.jpg",
     deptId: "chemistry", deptColor: "#9a3412", isHOD: true,
   },
   {
@@ -94,7 +94,7 @@ const allStaff: StaffMember[] = [
   {
     name: "Gboyega Afolalu", role: "CEO/FOUNDER",
     bio: "Driven by a passion for education and a commitment to excellence, he has built MathBridge into a trusted platform that helps students excel in their academic pursuits. ",
-    image: "/images/about/staffs/others/Gboyega-others.jpg",
+    image: "/images/about/staffs/others/gboyega-others.jpg",
     deptId: "others", deptColor: "#374151",
   },
   {
@@ -118,7 +118,7 @@ const allStaff: StaffMember[] = [
   {
     name: "Milare", role: "Customer Success and Retention Manager",
     bio: "Ensures every student and parent has a positive experience with MathBridge, from onboarding to ongoing support.",
-    image: "/images/about/staffs/others/milare.jpg",
+    image: "/images/about/staffs/others/milare-others.jpg",
     deptId: "others", deptColor: "#374151",
   },
 ];

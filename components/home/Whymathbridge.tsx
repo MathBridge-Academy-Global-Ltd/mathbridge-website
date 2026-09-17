@@ -261,10 +261,10 @@ export default function WhyMathbridge() {
         </motion.div>
 
         {/* Content */}
-        <div className="grid md:grid-cols-2 items-center gap-16 md:gap-12">
+        <div className="grid lg:grid-cols-2 items-center gap-16 lg:gap-12">
           {/* Left — image + floating stat mockups */}
           <motion.div
-            className="relative w-full mx-auto md:mx-0"
+            className="relative w-full max-w-lg mx-auto lg:mx-0"
             style={{ paddingTop: "64px", paddingBottom: "28px", paddingLeft: "28px" }}
             initial={{ opacity: 0, x: -60 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -368,7 +368,7 @@ export default function WhyMathbridge() {
 
           {/* Right — checklist */}
           <motion.ul
-            className="flex flex-col gap-7 mt-10 md:mt-0"
+            className="flex flex-col gap-7 mt-10 lg:mt-0"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}

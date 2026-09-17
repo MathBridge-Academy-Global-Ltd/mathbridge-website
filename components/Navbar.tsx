@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           {/* col-2: Nav links (centred) */}
           <nav
-            className="hidden md:flex items-center justify-center gap-1"
+            className="hidden lg:flex items-center justify-center gap-1"
             aria-label="Main navigation"
           >
             {navLinks.map((link) => {
@@ -91,7 +91,7 @@ export default function Navbar() {
           </nav>
 
           {/* col-3: CTA (right-aligned) */}
-          <div className="hidden md:flex items-center justify-end">
+          <div className="hidden lg:flex items-center justify-end">
             <Link
               href="/contact"
               id="navbar-cta-btn"
@@ -108,14 +108,14 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Hamburger — col-3, pinned right */}
+          {/* Hamburger — col-3, pinned right (visible up to tablet) */}
           <button
             id="navbar-hamburger"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="md:hidden col-start-3 justify-self-end flex items-center justify-center w-12 h-12 rounded-xl bg-transparent border-none cursor-pointer text-gray transition-all duration-200 hover:bg-primaryBlue/[0.06] hover:text-primaryBlue"
+            className="lg:hidden col-start-3 justify-self-end flex items-center justify-center w-12 h-12 rounded-xl bg-transparent border-none cursor-pointer text-gray transition-all duration-200 hover:bg-primaryBlue/[0.06] hover:text-primaryBlue"
           >
             <span
               className={[

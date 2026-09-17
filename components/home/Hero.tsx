@@ -150,16 +150,16 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* ── Main hero grid ── */}
-      <div className="relative max-w-[1280px] mx-auto px-6 pt-14 pb-4 grid md:grid-cols-2 items-center gap-10">
+      {/* ── Main hero grid (1 col up to tablet, 2 cols on desktop) ── */}
+      <div className="relative max-w-[1280px] mx-auto px-6 pt-14 pb-4 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-14">
 
         {/* ────────── LEFT — text column ────────── */}
-        <div className="w-full md:max-w-xl">
+        <div className="w-full max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left">
 
           {/* Headline */}
           <motion.h1
             {...fadeUp(0.08)}
-            className="text-[2.6rem] text-center md:text-left sm:text-5xl font-extrabold leading-tight tracking-tight text-gray-900"
+            className="text-[2.6rem] text-center lg:text-left sm:text-5xl font-extrabold leading-tight tracking-tight text-gray-900"
           >
             <span style={{ fontFamily:"var(--font-kavoon)", color:"#0009af" }}>Personalised</span>{" "}Tutoring
             <br />That Builds{" "}
@@ -181,7 +181,7 @@ export default function Hero() {
           {/* Sub-copy */}
           <motion.p
             {...fadeUp(0.16)}
-            className="mt-5 text-base text-center md:text-left md:text-[1.05rem] leading-relaxed text-gray-500 max-w-md"
+            className="mt-5 text-base text-center lg:text-left md:text-[1.05rem] leading-relaxed text-gray-500 max-w-md mx-auto lg:mx-0"
           >
             Expert tutoring in{" "}
             <strong className="text-gray-800 font-semibold">Mathematics, English, Physics, Chemistry</strong>{" "}and{" "}
@@ -191,7 +191,7 @@ export default function Hero() {
           {/* Trust micro-pills */}
           <motion.ul
             {...fadeUp(0.22)}
-            className="mt-4 flex justify-center md:justify-start flex-wrap gap-3"
+            className="w-full mt-4 flex justify-center lg:justify-start flex-wrap gap-3"
             style={{ listStyle:"none", padding:0 }}
           >
             {trustItems.map((item) => (
@@ -202,10 +202,10 @@ export default function Hero() {
             ))}
           </motion.ul>
 
-          {/* CTA buttons */}
+          {/* CTA buttons — centered in the middle on mobile and tablet, left on desktop */}
           <motion.div
             {...fadeUp(0.28)}
-            className="mt-7 flex items-center gap-3 flex-wrap"
+          className="mt-10 flex items-center gap-3 flex-wrap justify-center"
           >
             <Link
               href="/contact"
@@ -235,13 +235,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="w-full flex justify-end"
+          className="w-full flex justify-center lg:justify-end"
         >
           {/* Gentle float on the whole collage */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ position:"relative", width:"100%", maxWidth:"520px" }}
+            className="relative w-full max-w-[520px] mx-auto lg:mx-0"
           >
             {/* 3-col grid */}
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1.1fr 1fr", gridTemplateRows:"auto auto", gap:"10px" }}>
@@ -354,17 +354,17 @@ export default function Hero() {
       >
         {/* Blue overlay so white text stays legible */}
         <div style={{ position:"absolute", inset:0, backgroundColor:"rgba(0,9,175,0.85)" }} />
-        <div className="relative max-w-[1280px] mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 place-items-center gap-8">
+        <div className="relative max-w-[1280px] mx-auto px-6 py-8 grid grid-cols-2 lg:grid-cols-4 place-items-center gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity:0, y:14 }}
               animate={{ opacity:1, y:0 }}
               transition={{ duration:0.45, delay:0.5 + i * 0.07 }}
-              className="text-center md:text-left"
+              className="text-center lg:text-left"
             >
               <p
-                className="flex items-center justify-center md:justify-start gap-1.5 leading-none text-[1.75rem] md:text-[2rem] font-extrabold text-white"
+                className="flex items-center justify-center lg:justify-start gap-1.5 leading-none text-[1.75rem] md:text-[2rem] font-extrabold text-white"
                 style={{ fontFamily: stat.value === "1:1" || stat.value === "100%" ? "var(--font-kavoon)" : undefined }}
               >
                 {stat.value}

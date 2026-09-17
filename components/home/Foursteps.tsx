@@ -153,7 +153,7 @@ const n4CX = VB_W * 0.82; // 820
 
 function DesktopTree() {
   return (
-    <div className="relative hidden md:block" style={{ height: VB_H }}>
+    <div className="relative hidden lg:block" style={{ height: VB_H }}>
       {/* ── SVG connector layer — rendered first so it's behind nodes ── */}
       <svg
         aria-hidden="true"
@@ -243,10 +243,10 @@ function DesktopTree() {
   );
 }
 
-/** Mobile: simple vertical stack with vertical connector line */
+/** Mobile / Tablet: simple vertical stack with vertical connector line */
 function MobileStack() {
   return (
-    <div className="flex md:hidden flex-col items-center gap-0">
+    <div className="flex lg:hidden flex-col items-center gap-0">
       {steps.map((step, i) => (
         <div key={step.number} className="flex flex-col items-center w-full">
           <div className="w-full max-w-[320px]">

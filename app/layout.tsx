@@ -3,6 +3,7 @@ import { Montserrat, Kavoon } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${kavoon.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <Preloader />
         <Navbar />
         <main className="flex-1 pt-[72px]">{children}</main>
         <Footer />

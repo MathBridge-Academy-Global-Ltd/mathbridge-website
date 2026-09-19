@@ -15,6 +15,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import WavyText from "@/components/WavyText";
+import { CreativeBackgroundFlare } from "@/components/backgrounds";
 
 export default function Testimonials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -109,64 +110,7 @@ export default function Testimonials() {
   return (
     <section className="relative bg-[#fbfbfe] py-24 overflow-hidden">
       {/* ═══════════════ CREATIVE BACKGROUND FLARE ═══════════════ */}
-
-      {/* Layer 1: Geometric Math Grid / Dot Matrix */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(#0009af 0.9px, transparent 0.9px), radial-gradient(#f1aa00 0.6px, transparent 0.6px)",
-          backgroundSize: "28px 28px",
-          backgroundPosition: "0 0, 14px 14px",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Layer 2: Warm ambient amber/gold glow (top-left) */}
-      <div
-        className="absolute -top-24 -left-20 w-[420px] h-[420px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(241,170,0,0.14) 0%, transparent 68%)",
-          filter: "blur(70px)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Layer 3: Deep royal blue atmospheric glow (bottom-right) */}
-      <div
-        className="absolute -bottom-28 -right-24 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,9,175,0.12) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Layer 4: Subtle floating chalk doodles in the background */}
-      <div
-        className="absolute top-12 left-[8%] text-[#0009af]/10 text-6xl font-serif select-none pointer-events-none -rotate-12 hidden md:block"
-        aria-hidden="true"
-      >
-        ∫
-      </div>
-      <div
-        className="absolute bottom-16 left-[6%] text-[#f1aa00]/15 text-5xl font-mono select-none pointer-events-none rotate-6 hidden md:block"
-        aria-hidden="true"
-      >
-        ∑
-      </div>
-      <div
-        className="absolute top-20 right-[7%] text-[#0009af]/10 text-5xl font-mono select-none pointer-events-none -rotate-12 hidden md:block"
-        aria-hidden="true"
-      >
-        f(x)
-      </div>
-      <div
-        className="absolute bottom-12 right-[9%] text-[#f1aa00]/20 text-6xl select-none pointer-events-none -rotate-6 hidden md:block"
-        aria-hidden="true"
-      >
-        √π
-      </div>
+      <CreativeBackgroundFlare />
 
       {/* ═══════════════ MAIN CONTENT ═══════════════ */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6">
@@ -237,7 +181,6 @@ export default function Testimonials() {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={18} className="text-[#f1aa00] fill-[#f1aa00] drop-shadow-sm" />
                   ))}
-                  <span className="ml-2 text-xs font-bold text-white/80">5.0 Star Rating</span>
                 </div>
 
                 {/* Pull-quote headline */}
@@ -408,7 +351,6 @@ export default function Testimonials() {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={18} className="text-[#f1aa00] fill-[#f1aa00] drop-shadow-sm" />
                   ))}
-                  <span className="ml-2 text-xs font-bold text-white/80">5.0 Star Rating</span>
                 </div>
 
                 {/* Pull-quote headline */}

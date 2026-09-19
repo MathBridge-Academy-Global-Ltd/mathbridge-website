@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import type { SubjectHeroProps } from "@/types/about";
+import EduSymbols from "@/components/EduSymbols";
 
 /* ─────────────────────────── animation helpers ─────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -11,17 +12,6 @@ const fadeUp = (delay = 0) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
-
-/* ──────────────────── floating math symbols ────────────── */
-const eduSymbols = [
-  { symbol: "π", x: "4%", y: "12%", size: 32, rotate: -12, color: "rgba(255,255,255,0.10)", delay: 0 },
-  { symbol: "∑", x: "10%", y: "70%", size: 28, rotate: 8, color: "rgba(255,255,255,0.08)", delay: 0.3 },
-  { symbol: "√", x: "88%", y: "18%", size: 26, rotate: 6, color: "rgba(241,170,0,0.15)", delay: 0.6 },
-  { symbol: "∞", x: "84%", y: "75%", size: 32, rotate: -5, color: "rgba(255,255,255,0.07)", delay: 0.2 },
-  { symbol: "Δ", x: "52%", y: "5%", size: 24, rotate: 10, color: "rgba(241,170,0,0.12)", delay: 0.5 },
-  { symbol: "f(x)", x: "6%", y: "44%", size: 16, rotate: -10, color: "rgba(255,255,255,0.08)", delay: 0.9 },
-  { symbol: "÷", x: "78%", y: "52%", size: 20, rotate: -8, color: "rgba(255,255,255,0.06)", delay: 0.4 },
-];
 
 export default function SubjectHero({
   bgImage = "/images/about/about-hero.jpg",
@@ -85,34 +75,8 @@ export default function SubjectHero({
         }}
       />
 
-      {/* ══════ FLOATING MATH SYMBOLS ══════ */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {eduSymbols.map((s, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-            transition={{
-              opacity: { duration: 0.8, delay: s.delay },
-              scale: { duration: 0.8, delay: s.delay },
-              y: { duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: s.delay },
-            }}
-            style={{
-              position: "absolute",
-              left: s.x, top: s.y,
-              fontSize: `${s.size}px`,
-              fontWeight: 700,
-              color: s.color,
-              transform: `rotate(${s.rotate}deg)`,
-              userSelect: "none",
-              lineHeight: 1,
-              fontFamily: "Georgia, serif",
-            }}
-          >
-            {s.symbol}
-          </motion.span>
-        ))}
-      </div>
+      {/* ══════ FLOATING MATH SYMBOLS & ICONS ══════ */}
+      <EduSymbols variant="dark" />
 
       {/* ══════ CENTERED CONTENT ══════ */}
       <div className="relative z-10 w-full max-w-2xl mx-auto px-6 py-20 flex flex-col items-center text-center">

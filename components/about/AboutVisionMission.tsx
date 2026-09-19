@@ -3,22 +3,13 @@
 import { motion } from "framer-motion";
 import { Compass, Target, Rocket, ShieldCheck } from "lucide-react";
 import WavyText from "@/components/WavyText";
+import { NetBackground } from "@/components/backgrounds";
 
 export default function AboutVisionMission() {
   return (
     <section className="relative overflow-hidden py-24 bg-[#FAFBFF]">
       {/* Net grid background pattern */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-45"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(0, 9, 175, 0.07) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 9, 175, 0.07) 1px, transparent 1px)
-          `,
-          backgroundSize: "32px 32px",
-        }}
-      />
+      <NetBackground />
       {/* Subtle background decorative shapes */}
       <div
         aria-hidden="true"

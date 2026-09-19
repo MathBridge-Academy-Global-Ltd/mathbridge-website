@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star, CheckCircle, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import type { StatItem, EduSymbol, FloatingIcon } from "@/types/home";
+import type { StatItem } from "@/types/home";
 import WavyText from "@/components/WavyText";
+import EduSymbols from "@/components/EduSymbols";
 
 /* ─────────────────────────── animation helpers ─────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -29,62 +30,6 @@ const trustItems = [
   "Progress tracked weekly",
 ];
 
-/* ──────────────────── educational background symbols ───────────────────── */
-// Each item: { symbol, x, y, size, rotate, color, delay }
-const eduSymbols: EduSymbol[] = [
-  { symbol: "π",  x: "4%",  y: "12%", size: 28, rotate: -12, color: "rgba(0,9,175,0.10)",  delay: 0 },
-  { symbol: "∑",  x: "12%", y: "68%", size: 26, rotate: 8,   color: "rgba(0,9,175,0.08)",  delay: 0.3 },
-  { symbol: "√",  x: "88%", y: "22%", size: 24, rotate: 6,   color: "rgba(241,170,0,0.13)", delay: 0.6 },
-  { symbol: "∞",  x: "82%", y: "75%", size: 30, rotate: -5,  color: "rgba(0,9,175,0.08)",  delay: 0.2 },
-  { symbol: "Δ",  x: "55%", y: "8%",  size: 22, rotate: 10,  color: "rgba(241,170,0,0.10)", delay: 0.5 },
-  { symbol: "÷",  x: "70%", y: "55%", size: 22, rotate: -8,  color: "rgba(0,9,175,0.07)",  delay: 0.4 },
-  { symbol: "×",  x: "25%", y: "85%", size: 20, rotate: 15,  color: "rgba(241,170,0,0.10)", delay: 0.7 },
-  { symbol: "≠",  x: "92%", y: "48%", size: 20, rotate: -6,  color: "rgba(0,9,175,0.07)",  delay: 0.1 },
-  { symbol: "²",  x: "42%", y: "90%", size: 18, rotate: 12,  color: "rgba(0,9,175,0.07)",  delay: 0.8 },
-  { symbol: "f(x)", x: "6%", y: "45%", size: 14, rotate: -10, color: "rgba(0,9,175,0.08)", delay: 0.9 },
-];
-
-/* ─────────────── educational SVG icons (inline, no imports) ────────────── */
-function PencilIcon({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={style}>
-      <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-    </svg>
-  );
-}
-function AtomIcon({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={style}>
-      <circle cx="12" cy="12" r="1" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
-    </svg>
-  );
-}
-function BookIcon({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={style}>
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-    </svg>
-  );
-}
-function FlaskIcon({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={style}>
-      <path d="M9 3h6M9 3v8l-4 9h14l-4-9V3" />
-    </svg>
-  );
-}
-
-const floatingIcons: FloatingIcon[] = [
-  { Icon: PencilIcon, x: "8%",  y: "30%", size: 28, rotate: 20,  color: "rgba(0,9,175,0.12)",   delay: 0.2 },
-  { Icon: AtomIcon,   x: "78%", y: "12%", size: 34, rotate: -15, color: "rgba(0,9,175,0.09)",   delay: 0.5 },
-  { Icon: BookIcon,   x: "60%", y: "78%", size: 30, rotate: 8,   color: "rgba(241,170,0,0.14)", delay: 0.3 },
-  { Icon: FlaskIcon,  x: "3%",  y: "74%", size: 26, rotate: -10, color: "rgba(241,170,0,0.12)", delay: 0.7 },
-];
-
 /* ══════════════════════════════ COMPONENT ══════════════════════════════════ */
 export default function Hero() {
   return (
@@ -98,58 +43,8 @@ export default function Hero() {
         <div style={{ position:"absolute", bottom:"-40px", right:"-60px",  width:"400px", height:"400px", borderRadius:"50%", background:"radial-gradient(circle, rgba(241,170,0,0.11) 0%, transparent 70%)", filter:"blur(24px)" }} />
         <div style={{ position:"absolute", top:"35%", right:"8%", width:"280px", height:"280px", borderRadius:"50%", background:"radial-gradient(circle, rgba(0,9,175,0.05) 0%, transparent 70%)", filter:"blur(16px)" }} />
 
-        {/* Math symbols */}
-        {eduSymbols.map((s, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -7, 0] }}
-            transition={{
-              opacity: { duration: 0.8, delay: s.delay },
-              scale:   { duration: 0.8, delay: s.delay },
-              y: { duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: s.delay },
-            }}
-            style={{
-              position: "absolute",
-              left: s.x,
-              top: s.y,
-              fontSize: `${s.size}px`,
-              fontWeight: 700,
-              color: s.color,
-              transform: `rotate(${s.rotate}deg)`,
-              userSelect: "none",
-              lineHeight: 1,
-              fontFamily: "Georgia, serif",
-            }}
-          >
-            {s.symbol}
-          </motion.span>
-        ))}
-
-        {/* SVG education icons */}
-        {floatingIcons.map(({ Icon, x, y, size, rotate, color, delay }, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-            transition={{
-              opacity: { duration: 0.9, delay },
-              scale:   { duration: 0.9, delay },
-              y: { duration: 5 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay },
-            }}
-            style={{
-              position: "absolute",
-              left: x,
-              top: y,
-              width: `${size}px`,
-              height: `${size}px`,
-              color,
-              transform: `rotate(${rotate}deg)`,
-            }}
-          >
-            <Icon style={{ width: "100%", height: "100%" }} />
-          </motion.div>
-        ))}
+        {/* Educational background symbols & floating icons */}
+        <EduSymbols variant="light" />
       </div>
 
       {/* ── Main hero grid (1 col up to tablet, 2 cols on desktop) ── */}

@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, type RefObject } from "react";
 import type { Benefit } from "@/types/home";
 import WavyText from "@/components/WavyText";
+import { NetBackground } from "@/components/backgrounds";
 
 const benefits: Benefit[] = [
   {
@@ -202,17 +203,7 @@ export default function WhyMathbridge() {
   return (
     <section className="relative overflow-hidden bg-[#FAFBFF] py-20" ref={sectionRef}>
       {/* Net grid background pattern */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-45"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(0, 9, 175, 0.07) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 9, 175, 0.07) 1px, transparent 1px)
-          `,
-          backgroundSize: "32px 32px",
-        }}
-      />
+      <NetBackground />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* Heading */}

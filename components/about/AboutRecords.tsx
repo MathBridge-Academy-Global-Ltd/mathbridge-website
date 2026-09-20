@@ -37,7 +37,7 @@ export default function AboutRecords() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-60px" });
 
-  const hoursCount = useCountUp(1000, 1800, inView);
+  const hoursCount = useCountUp(1024, 1800, inView);
   const staffCount = useCountUp(20, 1400, inView);
   const continentsCount = useCountUp(3, 1200, inView);
   const satisfactionCount = useCountUp(98, 1600, inView);
@@ -292,7 +292,7 @@ export default function AboutRecords() {
                 </div>
               </div>
               <div className="text-5xl font-black text-[#0009af] tracking-tight mb-2 flex items-center gap-1">
-                <span className="text-6xl leading-none">∞</span>
+                <span className="text-7xl leading-none">∞</span>
               </div>
               <p className="text-sm font-bold text-gray-800">Numerous Subjects</p>
               <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">

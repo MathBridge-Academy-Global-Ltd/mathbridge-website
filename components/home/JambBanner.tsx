@@ -40,7 +40,7 @@ export default function JambBanner() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Writing <WavyText text="JAMB IN 2027" fontColor="text-primaryGold" lineColor="text-primaryGold" />? <br /> Join Our Free Student Prep Group
+              Writing <WavyText text="JAMB IN 2027?" fontColor="text-primaryGold" lineColor="text-primaryGold" /> <br /> Join Our Free Student Prep Group
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-emerald-100/90 leading-relaxed">

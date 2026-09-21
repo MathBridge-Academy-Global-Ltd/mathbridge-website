@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants, type TargetAndTransition } from "framer-motion";
 import { useRef, type RefObject } from "react";
 import type { Benefit } from "@/types/home";
 import WavyText from "@/components/WavyText";
@@ -171,29 +171,29 @@ function AnimatedRing({ pct, color, size = 56 }: { pct: number; color: string; s
   );
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const itemVariant = {
+const itemVariant: Variants = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
 
-const floatAnim = {
+const floatAnim: TargetAndTransition = {
   y: [0, -7, 0],
-  transition: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
+  transition: { duration: 3.2, repeat: Infinity, ease: "easeInOut" as const },
 };
 
-const floatAnimSlow = {
+const floatAnimSlow: TargetAndTransition = {
   y: [0, -5, 0],
-  transition: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 },
+  transition: { duration: 4, repeat: Infinity, ease: "easeInOut" as const, delay: 1 },
 };
 
-const floatAnimMed = {
+const floatAnimMed: TargetAndTransition = {
   y: [0, -6, 0],
-  transition: { duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
+  transition: { duration: 3.6, repeat: Infinity, ease: "easeInOut" as const, delay: 0.5 },
 };
 
 export default function WhyMathbridge() {

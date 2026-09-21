@@ -14,9 +14,9 @@ export default function Home() {
       <Hero />
       <ExamMarquee />
       <Subjects />
-      <Whymathbridge />
+      <WhyMathbridge />
       <Testimonials />
-      <Foursteps />
+      <FourSteps />
       <AboutFAQ />
       <ContentAndMedia />
       <JambBanner />

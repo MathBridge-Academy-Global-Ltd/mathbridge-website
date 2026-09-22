@@ -10,7 +10,7 @@ const pageLinks = [
 ];
 
 const contactLinks = [
-  { href: "tel:+2347048615201", label: "+234-704-861-5201", Icon: Phone },
+  { href: "tel:+2347048615201", label: "+234 704 861 5201", Icon: Phone },
   { href: "mailto:mathbridge.ng@gmail.com", label: "mathbridge.ng@gmail.com", Icon: Mail },
   { href: "https://wa.me/2347048615201", label: "WhatsApp", Icon: WhatsAppIcon },
   { href: "https://www.instagram.com/mathbridge.academy?stkn=MXRkc3oxYXowc3QxaQ==", label: "Instagram", Icon: InstagramIcon },
@@ -53,7 +53,7 @@ export default function Footer() {
           <p className="text-[0.9rem] leading-[1.75] text-white/70 m-0">
             Personalized online tutoring that builds confidence
             <br />
-            and delivers results — one student at a time.
+            and delivers results, one student at a time.
           </p>
         </div>
 

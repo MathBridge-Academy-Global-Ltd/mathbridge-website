@@ -12,7 +12,7 @@ const steps: Step[] = [
     textColor: "#fff",
     title: "Book a Free Trial",
     description:
-      "Reach out and schedule a no-obligation introductory session so we can understand your child's needs.",
+      "Reach out and schedule a no obligation introductory session so we can understand your child's needs.",
   },
   {
     number: 2,
@@ -20,7 +20,7 @@ const steps: Step[] = [
     textColor: "#fff",
     title: "Choose your Plan",
     description:
-      "Pick a subscription that fits your goals, schedule, and budget — flexible enough to adjust anytime.",
+      "Pick a subscription that fits your goals, schedule, and budget. Flexible enough to adjust anytime.",
   },
   {
     number: 3,

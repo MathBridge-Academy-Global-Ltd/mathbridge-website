@@ -10,11 +10,11 @@ import { NetBackground } from "@/components/backgrounds";
 const faqs: FAQItem[] = [
   {
     q: "What subjects does MathBridge tutor?",
-    a: "We offer expert 1-on-1 tutoring in Mathematics, English Language, Physics, Biology, and Chemistry across British, Nigerian, and American curricula (WAEC, GCSE, IGCSE, A-Levels, JAMB, and SAT). Have a different subject in mind? We also provide expert instruction in other subjects upon request — simply let us know what you need and we will match you with a dedicated specialist tutor.",
+    a: "We offer expert 1 on 1 tutoring in Mathematics, English Language, Physics, Biology, and Chemistry across British, Nigerian, and American curricula (WAEC, GCSE, IGCSE, A-Levels, JAMB, and SAT). Have a different subject in mind? We also provide expert instruction in other subjects upon request.",
   },
   {
     q: "How does a typical session work?",
-    a: "Sessions are held live via our interactive online whiteboard. Your tutor reviews your goals, walks through curriculum concepts with step-by-step worked examples, and guides you through practice problems with real-time feedback — ensuring every minute is active and focused.",
+    a: "Sessions are held live via our interactive online whiteboard. Your tutor reviews your goals, walks through curriculum concepts with step by step worked examples, and guides you through practice problems with real time feedback, ensuring every minute is active and focused.",
   },
   {
     q: "How do I get started with MathBridge?",
@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "What makes MathBridge different?",
-    a: "Our educators are rigorously vetted (top 5% acceptance rate), every student receives an individualized learning plan rather than a one-size-fits-all lesson, and we provide transparent progress reporting to parents after sessions. We combine academic rigor with supportive mentorship.",
+    a: "Our educators are rigorously vetted (top 5% acceptance rate), every student receives an individualized learning plan rather than a generic lesson, and we provide transparent progress reporting to parents after sessions. We combine academic rigor with supportive mentorship.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function AboutFAQ({ showNetGrid = true }: AboutFAQProps) {
             </h2>
 
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-8 max-w-md">
-              Everything you need to know about our personalized tutoring, flexible schedules, and subject programs. Cannot find what you are looking for? Reach out to our academic team anytime.
+              Everything you need to know about our personalized tutoring, flexible schedules, and subject programs. Cannot find what you are looking for? Reach out through the contact page.
             </p>
 
             {/* Info badge */}

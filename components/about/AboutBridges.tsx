@@ -23,94 +23,94 @@ const tabs: Tab[] = [
 const allStaff: StaffMember[] = [
   {
     name: "Bolaji", role: "Head of Mathematics",
-    bio: "Expert in GCSE, WAEC Maths with a talent for breaking down complex problems into simple, logical steps.",
+    bio: "Breaks down complex Maths problems into simple, logical steps.",
     image: "/images/about/staffs/maths/bolaji-maths.jpg",
     deptIds: ["maths"], deptColor: "#0009af", isHOD: true,
   },
   {
     name: "Praise", role: "Head of English",
-    bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
+    bio: "Brings English to life through comprehension, essay writing, and critical analysis.",
     image: "/images/about/staffs/english/praise-english.jpg",
     deptIds: ["english"], deptColor: "#6D28D9", isHOD: true,
   },
   {
     name: "Joshua", role: "Head of Physics",
     supportRole: "Technical Support",
-    bio: "Makes abstract Physics concepts tangible through vivid diagrams, worked derivations.",
+    bio: "Makes abstract Physics concepts tangible through vivid derivations, worked examples.",
     image: "/images/about/staffs/physics/joshua-physics.jpg",
     deptIds: ["physics", "others"], deptColor: "#0e7490", isHOD: true, pillRole: "Dev",
   },
   {
     name: "Joy", role: "Head of Biology",
-    bio: "Inspires genuine curiosity about living systems and prepares students for top results in WAEC and GCSE Biology.",
+    bio: "Inspires curiosity about living systems with focused WAEC and GCSE prep.",
     image: "/images/about/staffs/biology/joy-biology.jpg",
     deptIds: ["biology"], deptColor: "#166534", isHOD: true,
   },
   {
     name: "Titilope", role: "Head of Chemistry",
-    bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
+    bio: "Guides students through Chemistry concepts with clear, exam focused methods.",
     image: "/images/about/staffs/chemistry/titilope-chemistry.jpg",
     deptIds: ["chemistry"], deptColor: "#9a3412", isHOD: true,
   },
   {
     name: "Grace", role: "Mathematics Tutor",
     supportRole: "Administrator",
-    bio: "Specialises in building strong statistical foundations and exam confidence for students.",
+    bio: "Builds strong statistical foundations and exam confidence in students.",
     image: "/images/about/staffs/maths/grace-maths.jpg",
     deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Admin",
   },
   {
     name: "Tehila", role: "Mathematics Tutor",
-    bio: "Passionate about making Maths enjoyable through interactive problem-solving examples.",
+    bio: "Makes Maths enjoyable through interactive problem solving and practical examples.",
     image: "/images/about/staffs/maths/tehila-maths.jpg",
     deptIds: ["maths"], deptColor: "#0009af",
   },
   {
     name: "Tomiwa", role: "Mathematics Tutor",
     supportRole: "Technical Support",
-    bio: "Dedicated to helping students achieve their target grades through consistent practice and tailored revision plans.",
+    bio: "Helps students hit target grades through structured practice and revision.",
     image: "/images/about/staffs/maths/tomiwa-maths.jpg",
     deptIds: ["maths", "others"], deptColor: "#0009af", pillRole: "Dev",
   },
   {
     name: "Damilola", role: "English Tutor",
-    bio: "Brings language to life with a clear focus on comprehension, essay writing, and critical analysis across all levels.",
+    bio: "Strengthens reading comprehension, creative writing, and grammar across all levels.",
     image: "/images/about/staffs/english/damilola-english.jpg",
     deptIds: ["english"], deptColor: "#6D28D9",
   },
   {
     name: "Ibrahim", role: "Chemistry Tutor",
-    bio: "Guides students through the wonders of Chemistry with exam-focused teaching style.",
+    bio: "Simplifies chemical equations and practical principles for top exam performance.",
     image: "/images/about/staffs/chemistry/ibrahim-chemistry.jpg",
     deptIds: ["chemistry"], deptColor: "#9a3412",
   },
   {
     name: "Gboyega Afolalu", role: "CEO/FOUNDER",
-    bio: "Driven by a passion for education and a commitment to excellence, he has built MathBridge into a trusted platform that helps students excel in their academic pursuits. ",
+    bio: "Passionate educator committed to building excellence and inspiring student achievement.",
     image: "/images/about/staffs/others/gboye-others.jpg",
     deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Nelson", role: "Director",
-    bio: "Drives the strategic direction of MathBridge, ensuring the company stays true to its mission.",
+    bio: "Guides strategic direction and core mission to empower student learning.",
     image: "/images/about/staffs/others/nelson-others.jpg",
     deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Enioluwa", role: "Chief Operating Officer",
-    bio: "Oversees daily operations and processes, ensuring every student and tutor has a seamless experience.",
+    bio: "Oversees daily operations to ensure a seamless learning and tutoring experience.",
     image: "/images/about/staffs/others/enioluwa-others.jpg",
     deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Favour", role: "Social Media Manager",
-    bio: "Tells the MathBridge story across digital platforms and builds the community.",
+    bio: "Shares student stories across digital platforms and grows the learning community.",
     image: "/images/about/staffs/others/favour-others.jpg",
     deptIds: ["others"], deptColor: "#374151",
   },
   {
     name: "Milare", role: "Customer Success and Retention Manager",
-    bio: "Ensures every student and parent has a positive experience with MathBridge, from onboarding to ongoing support.",
+    bio: "Supports students and parents from onboarding through every stage of learning.",
     image: "/images/about/staffs/others/milare-others.jpg",
     deptIds: ["others"], deptColor: "#374151",
   },
@@ -227,7 +227,7 @@ export default function AboutBridges() {
             Behind <span className="text-primaryBlue">MATHBridge</span>
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
-            Meet the passionate educators and support team who make world-class learning possible every day.
+            Meet the passionate educators and support team who make world class learning possible every day.
           </p>
         </motion.div>
 

@@ -24,7 +24,7 @@ export default function AboutPage() {
             </span>
           </>
         }
-        copy="Founded in 2025, MathBridge started with one subject and one goal — to make expert tutoring personal. Today we deliver live 1-on-1 sessions across numerous subjects to students on 3 continents."
+        copy="Founded in 2025, MathBridge started with one subject and one goal, to make expert tutoring personal. Today we deliver live 1-on-1 sessions across numerous subjects to students on 3 continents."
       />
       <ExamMarquee />
       <AboutVisionMission />

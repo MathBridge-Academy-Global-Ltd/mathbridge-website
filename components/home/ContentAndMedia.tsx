@@ -12,14 +12,14 @@ const reels: ReelItem[] = [
     postUrl: "https://www.instagram.com/mathbridge.academy/reel/DZ7kw_8SsEB/",
     title: "JAMB Surd Question Solved",
     description:
-      "Watch how we break down a tricky JAMB surd question step by step — making complex concepts simple and exam-ready for every student.",
+      "Watch how we break down a tricky JAMB surd question step by step, making complex concepts simple and exam ready for every student.",
   },
   {
     embedUrl: "https://www.instagram.com/reel/Db3TRUMKH6A/embed/",
     postUrl: "https://www.instagram.com/reel/Db3TRUMKH6A/",
     title: "SAT Registration & Tutorials",
     description:
-      "Everything you need to know about SAT registration and how MathBridge prepares students with structured, result-driven tutorial sessions.",
+      "Everything you need to know about SAT registration and how MathBridge prepares students with structured, results driven tutorial sessions.",
   },
   {
     embedUrl: "https://www.instagram.com/reel/DcZBAM6K1mJ/embed/",
@@ -126,7 +126,7 @@ export default function ContentAndMedia() {
 
         {/* Swipe hint on mobile */}
         <div className="flex sm:hidden items-center justify-center mt-3 text-xs font-medium text-gray-400">
-          ← Swipe to watch all reels →
+          Swipe to see all reels
         </div>
       </div>
     </section>

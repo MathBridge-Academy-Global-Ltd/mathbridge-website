@@ -76,7 +76,7 @@ export default function Hero() {
           >
             Expert tutoring in{" "}
             <strong className="text-gray-800 font-semibold">Mathematics, English, Physics, Chemistry</strong>{" "}and{" "}
-            <strong className="text-gray-800 font-semibold">Biology</strong> — tailored to every student&apos;s unique learning journey with live 1-on-1 sessions and weekly progress reports.
+            <strong className="text-gray-800 font-semibold">Biology</strong>, tailored to every student&apos;s unique learning journey with live one on one sessions and weekly progress reports.
           </motion.p>
 
           {/* Trust micro-pills */}

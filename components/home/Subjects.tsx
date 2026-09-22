@@ -84,7 +84,7 @@ export default function Subjects() {
             <span style={{ color:"#101928" }}>we cover</span>
           </h2>
           <p className="mt-3 text-sm text-gray-500">
-            Expert tutors across five core subjects — ready to unlock every student&apos;s potential.
+            Expert tutors across numerous subjects — ready to unlock every student&apos;s potential.
           </p>
         </motion.div>
 

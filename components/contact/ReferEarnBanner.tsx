@@ -255,7 +255,7 @@ export default function ReferEarnBanner() {
                 href="tel:+2347048615201"
                 className="text-white/65 hover:text-white transition-colors duration-150 font-medium"
               >
-                +234-704-861-5201
+                  +234 704 861 5201
               </a>
             </div>
           </div>

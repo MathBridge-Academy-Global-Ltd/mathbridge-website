@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "MathBridge - Accessible & Personalized Learning",
   description:
     "An education and EdTech platform focused on making math learning more accessible, engaging, and personalized.",
+  icons: {
+    icon: "/app-logo.svg",
+    shortcut: "/app-logo.svg",
+    apple: "/app-logo.svg",
+  },
 };
 
 export default function RootLayout({

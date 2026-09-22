@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ArrowRight, Gift, Sparkles } from "lucide-react";
 import WavyText from "@/components/WavyText";
 
@@ -60,7 +61,13 @@ export default function ReferEarnBanner() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 py-12 sm:py-16">
 
         {/* ── Eyebrow + Hero Headline ── */}
-        <div className="text-center mb-10 sm:mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-10 sm:mb-12"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
             <WavyText text="Refer" fontColor="text-primaryGold" lineColor="text-primaryGold" /> · Enrol ·{" "}
             <WavyText text="Earn" fontColor="text-primaryGold" lineColor="text-primaryGold" />
@@ -70,10 +77,16 @@ export default function ReferEarnBanner() {
             Know a family that needs a great tutor?{" "}
             <strong className="text-white">Refer them to MathBridge</strong> and get rewarded!
           </p>
-        </div>
+        </motion.div>
 
         {/* ── Three-column grid: How It Works + Reward Cards ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5"
+        >
 
           {/* How It Works — spans 2 cols */}
           <div
@@ -146,10 +159,16 @@ export default function ReferEarnBanner() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* ── Bottom Row: What you can refer + Why MathBridge + CTA ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* ── Bottom Row ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
 
           {/* What Can You Refer */}
           <div
@@ -240,7 +259,7 @@ export default function ReferEarnBanner() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

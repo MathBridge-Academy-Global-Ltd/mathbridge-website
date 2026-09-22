@@ -1,211 +1,234 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import emailjs from "@emailjs/browser";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(8, "Please enter a valid phone number"),
-  service: z.string().min(1, "Please select a service"),
-  message: z.string().optional(),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
-const services = [
-  // Subjects
-  "Mathematics Tutoring",
-  "English Language Tutoring",
-  "Physics Tutoring",
-  "Chemistry Tutoring",
-  "Biology Tutoring",
-  "Other Subjects",
-  // Services
-  "Online One-on-One Tutoring",
-  "After School Classes",
-  "STEM Education",
-  "Digital Literacy Training",
-  "Exam Preparation",
-  "Academic Mentoring",
-];
+import { useContactForm } from "@/hooks/useContactForm";
+import { contactServices } from "@/lib/contact/contactSchema";
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState("");
-
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-  });
+    form: { register, handleSubmit, formState: { errors } },
+    onSubmit,
+    isSubmitting,
+    submitSuccess,
+    submitError,
+  } = useContactForm();
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    setSubmitError("");
-    setSubmitSuccess(false);
 
-    try {
-      // 1. Send email via EmailJS
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          service: data.service,
-          message: data.message || "No additional message",
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      // 2. Redirect to WhatsApp
-      const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER!;
-      const message = `Hello, my name is ${data.name} and I want to make an enquiry about ${data.service}.`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      
-      setSubmitSuccess(true);
-      reset();
-      
-      // Open WhatsApp in a new tab
-      window.open(whatsappUrl, "_blank");
-      
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      setSubmitError("Something went wrong. Please try again or contact us directly on WhatsApp.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-[24px] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] border border-gray-100 p-6 sm:p-10"
+      className="bg-white rounded-[28px] overflow-hidden"
+      style={{
+        border: "1px solid rgba(0,9,175,0.08)",
+        boxShadow: "0 8px 48px -12px rgba(0,9,175,0.1), 0 2px 8px rgba(0,0,0,0.04)",
+      }}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Name & Email Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name *</label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Enter your full name"
-              {...register("name")}
-              className={`w-full px-4 py-3.5 rounded-xl bg-gray-50/50 border transition-colors focus:outline-none focus:ring-2 focus:ring-[#0009af]/20 ${errors.name ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-[#0009af]'}`}
-            />
-            {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>}
-          </div>
+      {/* ── Form card header ── */}
+      <div
+        className="relative px-8 py-6 overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #101928 0%, #1a2538 100%)" }}
+      >
+        {/* background.png texture */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/background.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.70,
+            mixBlendMode: "screen",
+          }}
+        />
+        <p className="relative text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">
+          Book a Session
+        </p>
+        <h2 className="relative text-lg sm:text-xl font-extrabold text-white leading-snug">
+          Tell us about your learning goals
+        </h2>
+        <p className="relative mt-1 text-sm text-gray-400">
+          We&apos;ll match you with the right tutor and reach out within a few hours.
+        </p>
+      </div>
 
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-semibold text-gray-700">Email Address *</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Enter your email address"
-              {...register("email")}
-              className={`w-full px-4 py-3.5 rounded-xl bg-gray-50/50 border transition-colors focus:outline-none focus:ring-2 focus:ring-[#0009af]/20 ${errors.email ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-[#0009af]'}`}
-            />
-            {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
-          </div>
-        </div>
+      {/* ── Form body ── */}
+      <div className="px-6 py-7 sm:px-8 sm:py-8">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
-        {/* Phone & Service Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number (WhatsApp) *</label>
-            <input
-              id="phone"
-              type="tel"
-              placeholder="e.g. +234 800 000 0000"
-              {...register("phone")}
-              className={`w-full px-4 py-3.5 rounded-xl bg-gray-50/50 border transition-colors focus:outline-none focus:ring-2 focus:ring-[#0009af]/20 ${errors.phone ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-[#0009af]'}`}
-            />
-            {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone.message}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="service" className="text-sm font-semibold text-gray-700">Service Required *</label>
-            <div className="relative">
-              <select
-                id="service"
-                {...register("service")}
-                defaultValue=""
-                className={`w-full px-4 py-3.5 rounded-xl bg-gray-50/50 border appearance-none transition-colors focus:outline-none focus:ring-2 focus:ring-[#0009af]/20 ${errors.service ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-[#0009af]'}`}
-              >
-                <option value="" disabled>Select a subject/service</option>
-                {services.map(s => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </div>
+          {/* Row 1: Name + Email */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="name" className="text-[11px] font-black uppercase tracking-wider text-gray-500">
+                Full Name <span className="text-[#0009af]">*</span>
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder="e.g. John Doe"
+                {...register("name")}
+                className={`w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
+                  errors.name
+                    ? "border-red-400 focus:ring-red-100 focus:border-red-400"
+                    : "border-gray-200 focus:border-[#0009af] focus:ring-[#0009af]/10"
+                }`}
+              />
+              {errors.name && (
+                <p className="text-xs text-red-500 flex items-center gap-1">
+                  <span className="w-1 h-1 rounded-full bg-red-500 inline-block shrink-0" />
+                  {errors.name.message}
+                </p>
+              )}
             </div>
-            {errors.service && <p className="text-xs text-red-500 mt-1">{errors.service.message}</p>}
-          </div>
-        </div>
 
-        {/* Message */}
-        <div className="space-y-2">
-          <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message (Optional)</label>
-          <textarea
-            id="message"
-            placeholder="Write your message here..."
-            rows={4}
-            {...register("message")}
-            className="w-full px-4 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 transition-colors focus:outline-none focus:border-[#0009af] focus:ring-2 focus:ring-[#0009af]/20 resize-none"
-          />
-        </div>
-
-        {/* Submit Status */}
-        {submitError && (
-          <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg border border-red-100">
-            {submitError}
+            <div className="space-y-1.5">
+              <label htmlFor="email" className="text-[11px] font-black uppercase tracking-wider text-gray-500">
+                Email Address <span className="text-[#0009af]">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="e.g. john@example.com"
+                {...register("email")}
+                className={`w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
+                  errors.email
+                    ? "border-red-400 focus:ring-red-100 focus:border-red-400"
+                    : "border-gray-200 focus:border-[#0009af] focus:ring-[#0009af]/10"
+                }`}
+              />
+              {errors.email && (
+                <p className="text-xs text-red-500 flex items-center gap-1">
+                  <span className="w-1 h-1 rounded-full bg-red-500 inline-block shrink-0" />
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
           </div>
-        )}
-        
-        {submitSuccess && (
-          <div className="p-3 bg-green-50 text-green-700 text-sm rounded-lg border border-green-100">
-            Message sent successfully! Redirecting you to WhatsApp...
-          </div>
-        )}
 
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#101928] hover:bg-[#1a2538] text-white text-sm font-bold rounded-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            <>
-              Send Message
-              <ArrowRight className="w-4 h-4" />
-            </>
+          {/* Row 2: Phone + Service */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="phone" className="text-[11px] font-black uppercase tracking-wider text-gray-500">
+                WhatsApp Number <span className="text-[#0009af]">*</span>
+              </label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="e.g. +234 800 000 0000"
+                {...register("phone")}
+                className={`w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
+                  errors.phone
+                    ? "border-red-400 focus:ring-red-100 focus:border-red-400"
+                    : "border-gray-200 focus:border-[#0009af] focus:ring-[#0009af]/10"
+                }`}
+              />
+              {errors.phone && (
+                <p className="text-xs text-red-500 flex items-center gap-1">
+                  <span className="w-1 h-1 rounded-full bg-red-500 inline-block shrink-0" />
+                  {errors.phone.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-1.5">
+              <label htmlFor="service" className="text-[11px] font-black uppercase tracking-wider text-gray-500">
+                Service Required <span className="text-[#0009af]">*</span>
+              </label>
+              <div className="relative">
+                <select
+                  id="service"
+                  {...register("service")}
+                  defaultValue=""
+                  className={`w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border appearance-none transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
+                    errors.service
+                      ? "border-red-400 focus:ring-red-100 focus:border-red-400"
+                      : "border-gray-200 focus:border-[#0009af] focus:ring-[#0009af]/10"
+                  }`}
+                >
+                  <option value="" disabled>Select a subject / service</option>
+                  {contactServices.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                  <svg className="fill-current h-4 w-4" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </div>
+              </div>
+              {errors.service && (
+                <p className="text-xs text-red-500 flex items-center gap-1">
+                  <span className="w-1 h-1 rounded-full bg-red-500 inline-block shrink-0" />
+                  {errors.service.message}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Row 3: Message — full width */}
+          <div className="space-y-1.5">
+            <label htmlFor="message" className="text-[11px] font-black uppercase tracking-wider text-gray-500">
+              Message{" "}
+              <span className="normal-case font-semibold tracking-normal text-gray-400">(optional)</span>
+            </label>
+            <textarea
+              id="message"
+              placeholder="Any extra context — e.g. curriculum, exam date, current level..."
+              rows={4}
+              {...register("message")}
+              className="w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border border-gray-200 transition-all duration-200 focus:outline-none focus:border-[#0009af] focus:ring-2 focus:ring-[#0009af]/10 focus:bg-white resize-none"
+            />
+          </div>
+
+          {/* Status banners */}
+          {submitError && (
+            <div className="flex items-start gap-3 p-4 bg-red-50 text-red-700 text-sm rounded-2xl border border-red-100">
+              <span className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-black shrink-0 mt-0.5">!</span>
+              {submitError}
+            </div>
           )}
-        </button>
-      </form>
+          {submitSuccess && (
+            <div className="flex items-start gap-3 p-4 bg-green-50 text-green-800 text-sm rounded-2xl border border-green-100">
+              <span className="w-5 h-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs font-black shrink-0 mt-0.5">✓</span>
+              Message sent! Opening WhatsApp to continue the conversation...
+            </div>
+          )}
+
+          {/* Submit */}
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button
+              type="submit"
+              id="contact-form-submit"
+              disabled={isSubmitting}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-bold rounded-xl transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-[2px] hover:shadow-[0_10px_28px_rgba(241,170,0,0.4)] active:translate-y-0"
+              style={{
+                background: "linear-gradient(135deg, #f1aa00 0%, #ffc42e 100%)",
+                color: "#101928",
+                boxShadow: "0 4px 16px rgba(241,170,0,0.28)",
+              }}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
+            </button>
+            <p className="text-[11px] text-gray-400 font-medium">
+              We&apos;ll also open WhatsApp so you can chat directly.
+            </p>
+          </div>
+
+        </form>
+      </div>
     </motion.div>
   );
 }

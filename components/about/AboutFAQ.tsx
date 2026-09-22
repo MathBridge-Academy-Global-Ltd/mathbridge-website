@@ -74,12 +74,21 @@ export default function AboutFAQ({ showNetGrid = true }: AboutFAQProps) {
             </p>
 
             {/* Info badge */}
-            <div className="flex items-center gap-3.5 bg-black border border-gray-150 rounded-2xl p-4 shadow-sm max-w-sm">
-              <div className="w-10 h-10 rounded-xl bg-[#0009af] flex items-center justify-center text-white shrink-0 shadow-sm">
+            <div
+              className="relative flex items-center gap-3.5 border border-white/10 rounded-2xl p-4 shadow-sm max-w-sm overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(23, 27, 35, 0.92) 0%, rgba(0, 0, 0, 0.92) 100%), url('/background.png')",
+                backgroundSize: "auto, cover",
+                backgroundPosition: "center, center",
+                backgroundBlendMode: "normal, screen",
+              }}
+            >
+              <div className="relative w-10 h-10 rounded-xl bg-[#0009af] flex items-center justify-center text-white shrink-0 shadow-sm">
                 <span className="text-sm font-black">5+</span>
               </div>
-              <div>
-                <p className="text-xs font-extrabold text-white">Core & Custom Subjects</p>
+              <div className="relative">
+                <p className="text-xs font-extrabold text-white">Core &amp; Custom Subjects</p>
                 <p className="text-[11px] text-white font-medium">Personalized 1-on-1 programs</p>
               </div>
             </div>

@@ -256,7 +256,7 @@ export default function Hero() {
             >
               <p
                 className="flex items-center justify-center lg:justify-start gap-1.5 leading-none text-[1.75rem] md:text-[2rem] font-extrabold text-white"
-                style={{ fontFamily: stat.value === "1:1" || stat.value === "100%" ? "var(--font-kavoon)" : undefined }}
+                style={{ fontFamily: "var(--font-kavoon)" }}
               >
                 {stat.value}
                 {stat.star && <Star size={20} style={{ color: "#f1aa00", fill: "#f1aa00", flexShrink: 0 }} />}

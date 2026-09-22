@@ -3,6 +3,9 @@ import ContactForm from "@/components/contact/ContactForm";
 import WavyText from "@/components/WavyText";
 import { CreativeBackgroundFlare } from "@/components/backgrounds";
 import { Mail, MapPin, Phone } from "lucide-react";
+import AboutFAQ from "@/components/about/AboutFAQ";
+import JambBanner from "@/components/home/JambBanner";
+import ReferEarnBanner from "@/components/contact/ReferEarnBanner";
 
 export const metadata: Metadata = {
   title: "Contact Us - MathBridge",
@@ -86,6 +89,11 @@ export default function ContactPage() {
 
         </div>
       </div>
+      
+      {/* ── Additional Sections ── */}
+      <ReferEarnBanner />
+      <AboutFAQ />
+      <JambBanner />
     </main>
   );
 }

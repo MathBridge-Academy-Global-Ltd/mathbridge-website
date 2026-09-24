@@ -4,15 +4,55 @@ import AboutFAQ from "@/components/about/AboutFAQ";
 import JambBanner from "@/components/home/JambBanner";
 import ReferEarnBanner from "@/components/contact/ReferEarnBanner";
 import ContactHero from "@/components/contact/ContactHero";
+import { getBreadcrumbJsonLd, getFaqJsonLd } from "@/lib/seo/jsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact Us - MathBridge",
-  description: "Get in touch with MathBridge for personalized tutoring in Mathematics, Science, and more.",
+  title: "Contact Us & Free Consultation",
+  description:
+    "Get in touch with MathBridge for personalized 1-on-1 tutoring in Mathematics, Sciences, English, GCSE, WAEC, SAT, and JAMB. Book your free consultation today.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact MathBridge | Book Your Free Consultation",
+    description:
+      "Speak with our academic coordination team to assess your goals and match with an expert 1-on-1 tutor.",
+    url: "/contact",
+    images: [
+      {
+        url: "/og-image-mathbridge.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact MathBridge for Expert Online Tutoring",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact MathBridge | Book Your Free Consultation",
+    description:
+      "Speak with our academic coordination team to assess your goals and match with an expert 1-on-1 tutor.",
+    images: ["/og-image-mathbridge.png"],
+  },
 };
 
 export default function ContactPage() {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Home", item: "/" },
+    { name: "Contact Us", item: "/contact" },
+  ]);
+  const faqJsonLd = getFaqJsonLd();
+
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ── Background layer ── */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         {/* Glow blobs */}

@@ -38,7 +38,7 @@ export default function ContactHero() {
             </h1>
             <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-md">
               Tell us what subjects you need help with, and we&apos;ll match you
-              with a specialist tutor to turn challenges into competitive
+              with a tutor who would help you turn academic challenges into competitive
               advantages.
             </p>
           </motion.div>

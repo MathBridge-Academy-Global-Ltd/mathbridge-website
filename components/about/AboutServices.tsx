@@ -95,7 +95,7 @@ export default function AboutServices() {
             <span style={{ color: "#101928" }}>Services</span>
           </h2>
           <p className="mt-3 text-sm text-gray-500">
-            Everything a student needs to learn, grow and excel — in one place.
+            Everything a student needs to learn, grow and excel in one place.
           </p>
         </motion.div>
 

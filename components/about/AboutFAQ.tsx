@@ -10,7 +10,7 @@ import { NetBackground } from "@/components/backgrounds";
 const faqs: FAQItem[] = [
   {
     q: "What subjects does MathBridge tutor?",
-    a: "We offer expert 1 on 1 tutoring in Mathematics, English Language, Physics, Biology, and Chemistry across British, Nigerian, and American curricula (WAEC, GCSE, IGCSE, A-Levels, JAMB, and SAT). Have a different subject in mind? We also provide expert instruction in other subjects upon request.",
+    a: "We offer expert 1 on 1 tutoring in Mathematics, English Language, Physics, Biology, and other subjects across British, Nigerian, and American curricula (WAEC, GCSE, IGCSE, A-Levels, JAMB, and SAT).",
   },
   {
     q: "How does a typical session work?",

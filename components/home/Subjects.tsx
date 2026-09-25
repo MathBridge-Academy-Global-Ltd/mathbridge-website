@@ -65,8 +65,8 @@ export default function Subjects() {
       {/* ── Subtle background texture ── */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {/* Soft glow blobs */}
-        <div style={{ position:"absolute", top:"-80px", right:"-80px", width:"400px", height:"400px", borderRadius:"50%", background:"radial-gradient(circle, rgba(0,9,175,0.07) 0%, transparent 70%)", filter:"blur(20px)" }} />
-        <div style={{ position:"absolute", bottom:"-60px", left:"-60px", width:"360px", height:"360px", borderRadius:"50%", background:"radial-gradient(circle, rgba(241,170,0,0.08) 0%, transparent 70%)", filter:"blur(20px)" }} />
+        <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(0,9,175,0.07) 0%, transparent 70%)", filter: "blur(20px)" }} />
+        <div style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", borderRadius: "50%", background: "radial-gradient(circle, rgba(241,170,0,0.08) 0%, transparent 70%)", filter: "blur(20px)" }} />
       </div>
 
       <div className="relative max-w-[1120px] mx-auto px-6">
@@ -81,7 +81,7 @@ export default function Subjects() {
         >
           <h2 className="text-[2rem] md:text-[2.25rem] font-extrabold tracking-tight text-gray-900">
             <WavyText text="Subjects" fontColor="text-primaryGold" lineColor="text-primaryGold" />{" "}
-            <span style={{ color:"#101928" }}>we cover</span>
+            <span style={{ color: "#101928" }}>we cover</span>
           </h2>
           <p className="mt-3 text-sm text-gray-500">
             Expert tutors across numerous subjects — ready to unlock every student&apos;s potential.
@@ -192,10 +192,10 @@ export default function Subjects() {
             {/* Card Content */}
             <div className="relative z-10 p-7 flex flex-col justify-center gap-3 text-white">
               <p className="text-[1.15rem] font-bold text-white leading-snug">
-                Not sure which subject?
+                and so much more...
               </p>
               <p className="text-[0.875rem] text-white/85 leading-relaxed">
-                Book a free 30-min demo and we&apos;ll match your child with the right tutor.
+                We teach any subject your child needs; From core subjects to elective and beyond.
               </p>
               <Link
                 href="/contact"

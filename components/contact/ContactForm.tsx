@@ -68,7 +68,7 @@ export default function ContactForm() {
               <input
                 id="name"
                 type="text"
-                placeholder="e.g. John Doe"
+                placeholder="e.g. John Akinlagbe"
                 {...register("name")}
                 className={`w-full px-4 py-3 rounded-xl text-sm bg-[#FAFBFF] border transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
                   errors.name

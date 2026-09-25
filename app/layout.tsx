@@ -73,9 +73,14 @@ export const metadata: Metadata = {
     creator: "@mathbridge",
   },
   icons: {
-    icon: "/app-logo.svg",
-    shortcut: "/app-logo.svg",
-    apple: "/app-logo.svg",
+    icon: [
+      { url: "/favicon-mathbridge.jpeg", type: "image/jpeg" },
+      { url: "/favicon-mathbridge.jpeg" },
+    ],
+    shortcut: "/favicon-mathbridge.jpeg",
+    apple: [
+      { url: "/favicon-mathbridge.jpeg", sizes: "180x180", type: "image/jpeg" },
+    ],
   },
 };
 

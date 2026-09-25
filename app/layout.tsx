@@ -74,12 +74,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-mathbridge.jpeg", type: "image/jpeg" },
-      { url: "/favicon-mathbridge.jpeg" },
+      { url: "/favicon-mathbridge.png", type: "image/png" },
+      { url: "/favicon-mathbridge.png" },
     ],
-    shortcut: "/favicon-mathbridge.jpeg",
+    shortcut: "/favicon-mathbridge.png",
     apple: [
-      { url: "/favicon-mathbridge.jpeg", sizes: "180x180", type: "image/jpeg" },
+      { url: "/favicon-mathbridge.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
